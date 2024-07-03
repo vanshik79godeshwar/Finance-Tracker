@@ -6,5 +6,4 @@ function App() {
     <h1>Unholy Trinity</h1>
   );
 }
-
 export default App;
