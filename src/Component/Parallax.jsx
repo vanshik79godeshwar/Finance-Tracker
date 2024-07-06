@@ -19,7 +19,7 @@ export default function Parallax() {
         useEffect(() => {
           const handleScroll = () => {
             let value = window.scrollY;
-            if(value < 300){
+            if(value < 350){
                 textRef.current.style.marginTop =  value * 2.5 + 'px'
             hill1Ref.current.style.top = 50 + value * -0.15 + 'px';
             hill4Ref.current.style.left = value * -1.5 + 'px';
