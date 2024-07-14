@@ -31,7 +31,7 @@ app.use('/api/protected', require('./Routes/protected'));
 
 app.get('/api/news', async (req, res) => {
   const query = req.query.query || 'Finance'; 
-  const apiKey = '05109a6623604899a4b599ae1ee07911';
+  const apiKey = 'a';
 
   if (!apiKey) {
     return res.status(500).json({ error: 'API key is missing' });
