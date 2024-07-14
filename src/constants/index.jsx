@@ -13,12 +13,12 @@ import user5 from "../assets/profile-pictures/user5.jpg";
 import user6 from "../assets/profile-pictures/user6.jpg";
 
 export const navItems = [
-  { label: "Home", href: "#" },
-  { label: "Contact us", href: "#" },
-  { label: "About us", href: "#" },
-  { label: "Services", href: "#" },
-  { label: "News", href: "#" },
-  { label: "Blogs", href: "#" },
+  { label: "Home", href: "/" },
+  { label: "Contact us", href: "/Contact-Us" },
+  { label: "About us", href: "/About" },
+  { label: "Services", href: "Services" },
+  { label: "News", href: "/News" },
+  { label: "Blogs", href: "/Blogs" },
 ];
 
 export const testimonials = [

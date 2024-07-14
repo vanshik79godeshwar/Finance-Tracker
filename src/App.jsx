@@ -1,23 +1,40 @@
-import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import FeatureSection from "./components/FeatureSection";
-import Workflow from "./components/Workflow";
-import Footer from "./components/Footer";
-import Pricing from "./components/Pricing";
-import Testimonials from "./components/Testimonials";
+import React from "react";
+import Home from "./Page/Home";
+import News from "./Page/News";
+import Login from "./Page/Login.";
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/about",
+    element: <div>About</div>,
+  },
+  {
+    path: "/contact",
+    element: <div>Contact</div>,
+  },
+  {
+    path: "/News",
+    element: <News />,
+  },
+  {
+    path: "/Login",
+    element: <Login />,
+  }
+]);
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <div className="max-w-7xl mx-auto pt-20 px-6 ">
-        <HeroSection />
-        <FeatureSection />
-        <Workflow />
-        <Pricing />
-        <Testimonials />
-        <Footer />
-      </div>
+      <RouterProvider router={router} />
     </>
   );
 };

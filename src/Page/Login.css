@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+#container-login {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 600px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s ease-in-out;
+}
+
+.right-panel-active #container-login {
+    transform: translateX(100%);
+}
+
+/* Form Containers */
+#signup-container-login,
+#signin-container-login {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+#signup-container-login {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.right-panel-active #signup-container-login {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+#signin-container-login {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.right-panel-active #signin-container-login {
+    transform: translateX(100%);
+}
+
+/* Forms */
+#signup-form-login,
+#signin-form-login {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+#signup-title-login,
+#signin-title-login {
+    font-weight: bold;
+    margin: 0;
+}
+
+#signup-social-container-login,
+#signin-social-container-login {
+    margin: 20px 0;
+}
+
+#signup-social-container-login a,
+#signin-social-container-login a {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px;
+    color: #333;
+}
+
+#signup-or-login,
+#signin-or-login {
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+#signup-name-login,
+#signup-email-login,
+#signup-password-login,
+#signin-email-login,
+#signin-password-login {
+    background: #f0f0f0;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+#signup-button-login,
+#signin-button-login {
+    border-radius: 20px;
+    background: #4b0082;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    margin-top: 10px;
+    transition: transform 80ms ease-in;
+}
+
+#signup-button-login{
+    background-color: #3297bf;
+}
+
+#signup-button-login:hover,
+#signin-button-login:hover {
+    background: #4b0082;
+}
+
+#signin-button-login:hover{
+    background-color: #3297bf;
+}
+
+/* Overlay Container */
+#overlay-container-login {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.right-panel-active #overlay-container-login {
+    transform: translateX(-100%);
+}
+
+#overlay-login {
+    background: aquamarine;
+    background: linear-gradient(to right, #4b0082, #3297bf);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+.right-panel-active #overlay-login {
+    transform: translateX(50%);
+}
+
+#overlay-left-login,
+#overlay-right-login {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+}
+
+#overlay-left-login {
+    transform: translateX(-20%);
+}
+
+.right-panel-active #overlay-left-login {
+    transform: translateX(0);
+}
+
+#overlay-right-login {
+    right: 0;
+    transform: translateX(0);
+}
+
+.right-panel-active #overlay-right-login {
+    transform: translateX(20%);
+}
+
+#overlay-left-title-login,
+#overlay-right-title-login {
+    font-weight: bold;
+    margin: 0;
+}
+
+#overlay-left-description-login,
+#overlay-right-description-login {
+    font-size: 14px;
+    margin: 20px 0 30px;
+}
+
+#overlay-signin-button-login,
+#overlay-signup-button-login {
+    border-radius: 20px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    transition: transform 80ms ease-in;
+}
+
+#overlay-signin-button-login:hover,
+#overlay-signup-button-login:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
