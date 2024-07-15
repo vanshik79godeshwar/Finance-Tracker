@@ -31,6 +31,7 @@ app.use('/api/protected', require('./Routes/protected'));
 
 app.get('/api/news', async (req, res) => {
   const query = req.query.query || 'Finance'; 
+
   const apiKey = process.env.NEWS_API_KEY;
 
   if (!apiKey) {
