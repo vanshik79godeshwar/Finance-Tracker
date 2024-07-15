@@ -9,6 +9,9 @@ export default {
       backgroundImage: {
         'circular-gradient': 'radial-gradient(circle, var(--tw-gradient-stops))',
       },
+      fontFamily: {
+        Lobster: ['Lobster', 'cursive']
+      },
       colors: {
         primary: '#457814', // Example custom green color
         secondary: '#D8345F', // Example custom red color

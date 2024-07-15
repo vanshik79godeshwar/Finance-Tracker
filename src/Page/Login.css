@@ -109,7 +109,7 @@
 #signup-button-login,
 #signin-button-login {
     border-radius: 20px;
-    background: #4b0082;
+    background: black;
     color: #fff;
     font-size: 12px;
     font-weight: bold;
@@ -118,17 +118,10 @@
     transition: transform 80ms ease-in;
 }
 
-#signup-button-login{
-    background-color: #3297bf;
-}
 
 #signup-button-login:hover,
 #signin-button-login:hover {
-    background: #4b0082;
-}
-
-#signin-button-login:hover{
-    background-color: #3297bf;
+    background: rgb(77, 75, 75);
 }
 
 /* Overlay Container */
