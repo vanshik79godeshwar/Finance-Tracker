@@ -1,6 +1,6 @@
-import { Menu, X } from "lucide-react";
+import { Link, Menu, X } from "lucide-react";
 import { useState } from "react";
-import logo from "../assets/logo.png";
+import logo from "../assets/Brand_LOGO.png";
 import { navItems } from "../constants";
 import { NavLink } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
             <img className="h-10 w-10 mr-2" src={logo} alt="Logo" />
-            <span className="text-xl tracking-tight">CapitalCompass</span>
+            <NavLink to={'/'} className="text-xl tracking-tight font-Lobster text-wrap">CapitalCompass</NavLink>
           </div>
           <ul className="hidden lg:flex ml-14 space-x-12">
             {navItems.map((item, index) => (

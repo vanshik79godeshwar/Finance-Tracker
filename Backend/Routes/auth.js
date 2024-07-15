@@ -56,7 +56,7 @@ router.post('/register', async (req, res) => {
       from: "CapitalCompass",
       to: su_email,
       subject: 'Welcome to Our Website!',
-      text: `Hello ${name},\n\nThank you for signing up on our website.\nhumari website boht khatarnak he\n\nBest Regards,\nCapitalCompass`,
+      html: `<p>Hello ${name},</p><p>Thank you for signing up on our website.</p><p>humari website boht khatarnak he</p><p>Best Regards,</p><p>CapitalCompass</p>`,
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
