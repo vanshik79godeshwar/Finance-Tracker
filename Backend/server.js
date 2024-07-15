@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(cors({
   origin: 'http://localhost:5173', // Replace with your frontend's URL
   methods: 'GET,POST',
-  allowedHeaders: 'Content-Type',
+  allowedHeaders: ['Content-Type', 'x-auth-token'],
 }));
 
 // Define Routes
@@ -31,7 +31,8 @@ app.use('/api/protected', require('./Routes/protected'));
 
 app.get('/api/news', async (req, res) => {
   const query = req.query.query || 'Finance'; 
-  const apiKey = 'a';
+
+  const apiKey = process.env.NEWS_API_KEY;
 
   if (!apiKey) {
     return res.status(500).json({ error: 'API key is missing' });
