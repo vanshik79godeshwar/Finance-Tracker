@@ -32,6 +32,7 @@ const Login = () => {
 
     const Onsubmit_SU = async (e) => {
         e.preventDefault();
+        console.log('Submitting SignUp Form', SignUpFormdata);
         try {
             const res = await api.post('/api/auth/register', SignUpFormdata);
             console.log(res.data);

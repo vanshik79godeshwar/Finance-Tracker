@@ -53,7 +53,7 @@ router.post('/register', async (req, res) => {
     await user.save();
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
+      from: "CapitalCompass",
       to: su_email,
       subject: 'Welcome to Our Website!',
       text: `Hello ${name},\n\nThank you for signing up on our website.\nhumari website boht khatarnak he\n\nBest Regards,\nCapitalCompass`,
