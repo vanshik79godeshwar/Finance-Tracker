@@ -48,6 +48,7 @@ router.post('/register', async (req, res) => {
       username: name,
       email: su_email,
       password: hashedPassword,
+      avatar: 'https://via.placeholder.com/150',
     });
 
     await user.save();
@@ -78,19 +79,19 @@ router.post('/register', async (req, res) => {
 
 // Login
 router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
+  const { username, password } = req.body;
   try {
     console.log('Logging in user:', req.body);
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ username });
     if (!user) {
-      console.log('Invalid credentials - User not found:', email);
+      console.log('Invalid credentials - User not found:', username);
       return res.status(400).json({ message: 'Invalid credentials' });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      console.log('Invalid credentials - Password mismatch:', email);
+      console.log('Invalid credentials - Password mismatch:', username);
       return res.status(400).json({ message: 'Invalid credentials' });
     }
 
@@ -110,6 +111,8 @@ router.post('/login', async (req, res) => {
           throw err;
         }
         res.json({ token: token });
+        console.log(token);
+        console.log('User logged in successfully:', user);
       }
     );
   } catch (error) {

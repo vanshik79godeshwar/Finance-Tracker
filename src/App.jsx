@@ -1,42 +1,27 @@
-import React from "react";
-import Home from "./Page/Home";
-import News from "./Page/News";
-import Login from "./Page/Login.";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Page/Home.jsx';
+import News from './Page/News.jsx';
+import Login from './Page/Login.jsx';
+import User from './Page/User.jsx';
+import PrivateRoute from './PrivateRoute.jsx';
+import Test from './Page/Test.jsx';
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/about",
-    element: <div>About</div>,
-  },
-  {
-    path: "/contact",
-    element: <div>Contact</div>,
-  },
-  {
-    path: "/News",
-    element: <News />,
-  },
-  {
-    path: "/Login",
-    element: <Login />,
-  }
-]);
-
-const App = () => {
+function App() {
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/Blogs" element={<Test />} />
+        <Route
+          path="/:username/*"
+          element={<PrivateRoute element={<User />} />}
+        />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
