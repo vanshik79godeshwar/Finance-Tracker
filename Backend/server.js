@@ -15,6 +15,7 @@ const PORT = process.env.PORT || 5000;
 // Connect Database
 connectDB();
 
+app.use(express.json({ extended: false }));
 // Init Middleware
 app.use(bodyParser.json());
 
@@ -28,6 +29,7 @@ app.use(cors({
 // Define Routes
 app.use('/api/auth', require('./Routes/auth'));
 app.use('/api/protected', require('./Routes/protected'));
+app.use('/api/user', require('./Routes/UserRoutes'));
 
 app.get('/api/news', async (req, res) => {
   const query = req.query.query || 'Finance'; 
