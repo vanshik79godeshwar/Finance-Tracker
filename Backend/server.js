@@ -5,6 +5,7 @@ const cors = require('cors');
 const connectDB = require('./config/database');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
+const authMiddleware = require('./MiddleWare/authMiddleware');
 
 // To load environment variables
 dotenv.config();
@@ -22,14 +23,16 @@ app.use(bodyParser.json());
 // Enable CORSs
 app.use(cors({
   origin: 'http://localhost:5173', // Replace with your frontend's URL
-  methods: 'GET,POST',
-  allowedHeaders: ['Content-Type', 'x-auth-token'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'x-auth-token','Authorization'],
 }));
 
 // Define Routes
 app.use('/api/auth', require('./Routes/auth'));
 app.use('/api/protected', require('./Routes/protected'));
 app.use('/api/user', require('./Routes/UserRoutes'));
+app.use('/api/transactions', authMiddleware,require('./Routes/transactions'));
+app.use('/api/get-user', require('./Routes/getUser'));
 
 app.get('/api/news', async (req, res) => {
   const query = req.query.query || 'Finance'; 

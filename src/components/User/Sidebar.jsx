@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaUser, FaQuestionCircle, FaCog, FaTachometerAlt, FaBell, FaEnvelope, FaChartLine, FaChartPie, FaFileAlt, FaPuzzlePiece, FaCode, FaCreditCard } from 'react-icons/fa';
-import { MdDashboard } from 'react-icons/md';
 import BrandLogo from '../../assets/Brand_LOGO.png';
+
 
 const Sidebar = ({ user }) => {
     const sections = [
@@ -16,14 +16,15 @@ const Sidebar = ({ user }) => {
         { name: 'Analytics', path: '/analytics', icon: <FaChartPie /> },
         { name: 'Reports', path: '/reports', icon: <FaFileAlt /> },
         { name: 'Integrations', path: '/integrations', icon: <FaPuzzlePiece /> },
-        { name: 'API', path: '/api', icon: <FaCode /> },
+        { name: 'Expense', path: '/expense', icon: <FaPuzzlePiece /> },
+        { name: 'Income', path: '/income', icon: <FaCode /> },
         { name: 'Billing', path: '/billing', icon: <FaCreditCard /> },
     ];
 
     console.log('User data:', user);
 
     return (
-        <div className="flex flex-col w-64 h-screen px-4 py-8 bg-gray-900 border-r dark:bg-gray-800 dark:border-gray-600 md:relative md:h-auto md:overflow-y-auto md:mt-0 md:border-none">
+        <div className="flex flex-col w-64 h-screen px-4 py-8 bg-Black border-r dark:bg-gray-800 dark:border-gray-600 md:relative md:h-auto md:overflow-y-auto md:mt-0 md:border-none">
             <div className='flex flex-row justify-start'>
             <img className='h-8 w-8' src={BrandLogo}/>
             </div>
@@ -44,7 +45,8 @@ const Sidebar = ({ user }) => {
                     {sections.map((section, index) => (
                         <Link
                             key={index}
-                            className="flex items-center px-4 py-2 text-gray-200 rounded-md hover:bg-gray-700"
+                            
+                            className= {` flex items-center px-4 py-2 text-gray-200 rounded-md hover:bg-gray-700 hover:text-white dark:text-gray-100 dark:hover:bg-gray-600 ${window.location.pathname === `/${user.username}${section.path}` ? 'bg-gray-500' : ''}`}
                             to={`/${user.username}${section.path}`}
                         >
                             {section.icon}

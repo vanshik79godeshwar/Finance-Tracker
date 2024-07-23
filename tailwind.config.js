@@ -25,7 +25,16 @@ export default {
         F: '#0F2C47', // Prussian blue
         G: '#ADD8E6', // Light blue
         H: '#30346D', // Space cadet
-        I : '#353935' // Olive
+        I : '#353935', // Olive
+        // new colors
+        Black: '#1e1e1e',
+        DarkGray: '#2a2a2a',
+        Blue: '#007acc',
+        LightBlue: '#00aaff',
+        White: '#ffffff',
+        LightGray: '#cccccc',
+        Green: '#4caf50',
+        Red: '#f44336',
       },
     },
   },
