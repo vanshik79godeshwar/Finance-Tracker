@@ -78,6 +78,7 @@ router.post('/register', async (req, res) => {
 });
 
 // Login
+// Login
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -96,9 +97,7 @@ router.post('/login', async (req, res) => {
     }
 
     const payload = {
-      user: {
-        id: user.id,
-      },
+      userId: user._id,  // Ensure this matches what authMiddleware expects
     };
 
     jwt.sign(
@@ -120,5 +119,6 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
 
 module.exports = router;

@@ -31,18 +31,26 @@ function Chart() {
             {
                 label: 'Income',
                 data: filteredData.map(([_, values]) => values.income),
-                backgroundColor: 'green',
-                borderColor: 'green',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(75, 192, 192, 1)',
                 fill: false,
-                tension: 0.2,
+                tension: 0.4,
             },
             {
                 label: 'Expenses',
                 data: filteredData.map(([_, values]) => values.expense),
-                backgroundColor: 'red',
-                borderColor: 'red',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(255, 99, 132, 1)',
                 fill: false,
-                tension: 0.2,
+                tension: 0.4,
             },
         ],
     };
@@ -52,10 +60,22 @@ function Chart() {
         plugins: {
             legend: {
                 position: 'top',
+                labels: {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    font: {
+                        size: 14,
+                        family: 'Arial, sans-serif',
+                    },
+                },
             },
             title: {
                 display: true,
                 text: 'Income and Expenses Over Time',
+                color: 'rgba(255, 255, 255, 0.7)',
+                font: {
+                    size: 20,
+                    family: 'Arial, sans-serif',
+                },
             },
         },
         scales: {
@@ -63,19 +83,41 @@ function Chart() {
                 title: {
                     display: true,
                     text: 'Date',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    font: {
+                        size: 16,
+                        family: 'Arial, sans-serif',
+                    },
+                },
+                ticks: {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                },
+                grid: {
+                    display: false,
                 },
             },
             y: {
                 title: {
                     display: true,
                     text: 'Amount',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    font: {
+                        size: 16,
+                        family: 'Arial, sans-serif',
+                    },
+                },
+                ticks: {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                },
+                grid: {
+                    color: 'rgba(200, 200, 200, 0.2)',
                 },
             },
         },
     };
 
     return (
-        <div className="bg-pink-50 border-2 border-white shadow-md p-4 rounded-lg">
+        <div className=" shadow-2xl p-4 mb-5 rounded-lg">
             <Line data={data} options={options} />
         </div>
     );

@@ -5,10 +5,12 @@ import ExpensesCMP from '../components/User/ExpensesCMP';
 export default function Help({ user }) {
 
   return (
-    <div className="flex">
-      <Sidebar user={user} />
-      <div className="flex-1 bg-blue-400">
-        <ExpensesCMP />
+    <div className="flex h-screen ">
+      <div className='overflow-y-auto sidebar'>
+        <Sidebar user={user} />
+      </div>
+      <div className="flex-1 bg-DarkGray text-White overflow-y-auto content">
+        <ExpensesCMP user={user} /> 
       </div>
     </div>
   )

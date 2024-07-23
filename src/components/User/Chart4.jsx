@@ -83,10 +83,22 @@ function TrendAnalysis() {
         plugins: {
             legend: {
                 position: 'top',
+                labels: {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    font: {
+                        size: 14,
+                        family: 'Arial, sans-serif',
+                    },
+                },
             },
             title: {
                 display: true,
                 text: 'Income and Expenses with Moving Averages',
+                color: 'rgba(255, 255, 255, 0.7)',
+                font: {
+                    size: 16,
+                    family: 'Arial, sans-serif',
+                },
             },
         },
         scales: {
@@ -94,19 +106,41 @@ function TrendAnalysis() {
                 title: {
                     display: true,
                     text: 'Date',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    font: {
+                        size: 14,
+                        family: 'Arial, sans-serif',
+                    },
+                },
+                ticks: {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                },
+                grid: {
+                    color: 'rgba(255, 255, 255, 0.2)',
                 },
             },
             y: {
                 title: {
                     display: true,
                     text: 'Amount',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    font: {
+                        size: 14,
+                        family: 'Arial, sans-serif',
+                    },
+                },
+                ticks: {
+                    color: 'rgba(255, 255, 255, 0.7)',
+                },
+                grid: {
+                    color: 'rgba(255, 255, 255, 0.2)',
                 },
             },
         },
     };
 
     return (
-        <div className="bg-pink-50 border-2 border-white shadow-md p-4 rounded-lg">
+        <div className=" shadow-2xl p-4 rounded-lg">
             <Line data={data} options={options} />
         </div>
     );

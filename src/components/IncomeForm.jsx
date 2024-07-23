@@ -1,44 +1,41 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import axios from 'axios';
+import { useGlobalContext } from '../context/GlobalContext';
 import Button from './Button';
 import { plus } from '../utils/Icons';
 
-const BASE_URL = "http://localhost:5000/api/transactions/";
-
-function Form({ type, fetchData, user }) {
+function Form({ type, user }) {
+  const { addIncome } = useGlobalContext();
   const [inputState, setInputState] = useState({
     title: '',
     amount: '',
     date: '',
     category: '',
     description: '',
-    user: user._id,
   });
 
   const { title, amount, date, category, description } = inputState;
 
   const handleInput = (name) => (e) => {
-    setInputState({ ...inputState, [name]: e.target.value, user: user._id });
+    setInputState({ ...inputState, [name]: e.target.value});
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Submitting: ", inputState); // Debug log to check state before submission
     try {
-      await axios.post(`${BASE_URL}add-${type}`, inputState);
-      fetchData();
+      await addIncome(inputState, user);
+
       setInputState({
         title: '',
         amount: '',
         date: '',
         category: '',
         description: '',
-        user: user._id,
       });
     } catch (error) {
-      console.error("Error: ", error.response.data.message);
+      console.error("Error: ", error);
     }
   };
 
@@ -51,7 +48,7 @@ function Form({ type, fetchData, user }) {
           name="title"
           placeholder="Title"
           onChange={handleInput('title')}
-          className="p-3 rounded-md outline-none "
+          className="p-3 rounded-md outline-none"
         />
       </div>
       <div className="flex flex-col">
@@ -71,7 +68,7 @@ function Form({ type, fetchData, user }) {
           selected={date}
           dateFormat="dd/MM/yyyy"
           onChange={(date) => {
-            setInputState({ ...inputState, date, user: user._id });
+            setInputState({ ...inputState, date});
           }}
           className="p-3 rounded-md outline-none"
         />

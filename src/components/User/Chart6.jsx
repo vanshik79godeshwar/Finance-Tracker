@@ -43,17 +43,18 @@ function ExpenseCategoryCharts() {
             legend: {
                 position: 'top',
                 labels: {
-                    color: 'blue', // Change legend label color here
+                    color: 'white', // Change legend label color here
                 }
             },
             title: {
                 display: true,
-                text: 'Expenses by Category',
-                color: 'green', // Change title color here
+                text: 'Income by Category',
+                color: '#cccccc', // Change title color here
             },
             tooltip: {
-                bodyColor: 'purple', // Change tooltip text color here
-                backgroundColor: 'yellow', // Change tooltip background color here
+                titleColor: 'black', // Change tooltip title color here
+                bodyColor: 'black', // Change tooltip text color here
+                backgroundColor: 'white', // Change tooltip background color here
             }
         },
         scales: {
@@ -62,32 +63,33 @@ function ExpenseCategoryCharts() {
                 title: {
                     display: true,
                     text: 'Amount',
-                    color: 'red', // Change Y-axis title color here
+                    color: 'black', // Change Y-axis title color here
                 },
                 ticks: {
-                    color: 'black', // Change Y-axis ticks color here
+                    color: 'orange', // Change Y-axis ticks color here
                 }
             },
             x: {
                 title: {
                     display: true,
                     text: 'Category',
-                    color: 'red', // Change X-axis title color here
+                    color: 'black', // Change X-axis title color here
                 },
                 ticks: {
-                    color: 'black', // Change X-axis ticks color here
-                }
+                    color: 'orange', // Change X-axis ticks color here
+                },
+                
             },
         },
     };
 
     return (
-        <div className="flex flex-col md:flex-row">
-            <div className="flex-1 bg-pink-50 border-2 border-white shadow-md p-4 rounded-lg m-2">
+        <div className="flex flex-col md:flex-row w-full mb-7 border-2 border-orange-500 p-4 shadow-lg justify-center">
+            <div style={{height: "24rem"}} className="flex-1 w-6/12 h- text-white   p-4 rounded-lg m-2">
                 <h3 className="text-center mb-4">Expense Breakdown by Category (Pie)</h3>
                 <Pie data={expenseData} options={options} />
             </div>
-            <div className="flex-1 bg-pink-50 border-2 border-white shadow-md p-4 rounded-lg m-2">
+            <div className="flex-1 w-6/12 text-white  p-4 rounded-lg m-2">
                 <h3 className="text-center mb-4">Expense Breakdown by Category (Bar)</h3>
                 <Bar data={barData} options={options} />
             </div>

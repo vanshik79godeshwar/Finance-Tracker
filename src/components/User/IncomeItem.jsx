@@ -12,7 +12,8 @@ function IncomeItem({
   description,
   deleteItem,
   indicatorColor,
-  type
+  type,
+  user
 }) {
   const categoryIcon = () => {
     switch (category) {
@@ -61,18 +62,18 @@ function IncomeItem({
   };
 
   return (
-    <div className="flex items-center p-2 bg-White border border-gray-300 rounded shadow">
-      <div className={`flex items-center text-5xl justify-center w-20 h-20 bg-slate-600 border-2 border-white rounded-lg`}>
+    <div className="flex items-center p-2 bg-White border border-gray-300 shadow rounded-3xl">
+      <div className={`flex items-center text-5xl justify-center w-20 h-20 bg-A border-2 border-white rounded-2xl`}>
         {type === 'expense' ? expenseCatIcon() : categoryIcon()}
       </div>
 
       <div className="flex flex-col flex-1 ml-4">
-        <h5 className="text-lg font-bold relative pl-6">
-          {title}
+        <h5 className=" font-mono text-lg font-bold relative  text-B">
+          Title : {title}
           <span className={`absolute top-1/2 left-0 transform -translate-y-1/2 w-3 h-3 rounded-full ${indicatorColor}`} />
         </h5>
         <div className="flex justify-between items-center">
-          <div className="flex flex-col gap-2 text-gray-600">
+          <div className="flex flex-col gap-2 text-zinc-700">
             <p className="flex items-center gap-2">
               {dollar} {amount}
             </p>
@@ -86,10 +87,10 @@ function IncomeItem({
           <Button
             icon={trash}
             bPad="1rem"
-            bg="bg-red-500 hover:bg-red-600 p-5 rounded-full hover:shadow-lg transition-all ease-in-out"
+            bg="bg-red-500 hover:bg-red-600 p-5 mb-5 rounded-full hover:shadow-lg transition-all ease-in-out"
             bRad="rounded"
             className="ml-auto  rounded"
-            onClick={() => deleteItem(id)}
+            onClick={() => deleteItem(id, user)}
           />
         </div>
       </div>
