@@ -18,6 +18,6 @@ const userSchema = new mongoose.Schema({
   avatar: {
     type: String,
   },
-});
+},{timestamp: true});
 
 module.exports = mongoose.model('User', userSchema);

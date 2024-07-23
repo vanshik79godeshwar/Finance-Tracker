@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 // Enable CORSs
 app.use(cors({
   origin: 'http://localhost:5173', // Replace with your frontend's URL
-  methods: 'GET,POST',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'x-auth-token'],
 }));
 
@@ -30,6 +30,7 @@ app.use(cors({
 app.use('/api/auth', require('./Routes/auth'));
 app.use('/api/protected', require('./Routes/protected'));
 app.use('/api/user', require('./Routes/UserRoutes'));
+app.use('/api/transactions', require('./Routes/transactions'));
 
 app.get('/api/news', async (req, res) => {
   const query = req.query.query || 'Finance'; 
