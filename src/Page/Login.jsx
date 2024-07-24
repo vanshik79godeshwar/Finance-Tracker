@@ -55,8 +55,8 @@ const Login = () => {
         }
         try {
             const res = await api.post('/api/auth/register', signUpFormData);
-            console.log(res.data);
-            navigate('/login');
+            localStorage.setItem('token', res.data.token); // Store the token after registration
+            navigate(`/${name}/profile`); // Redirect to the user profile or dashboard
         } catch (error) {
             console.error('Error signing up:', error);
         }
@@ -74,8 +74,8 @@ const Login = () => {
         }
         try {
             const res = await api.post('/api/auth/login', signInFormData);
-            localStorage.setItem('token', res.data.token);
-            navigate(`/${username}/profile`);
+            localStorage.setItem('token', res.data.token); // Store the token after login
+            navigate(`/${username}/profile`); // Redirect to the user profile or dashboard
         } catch (error) {
             console.error('Error signing in:', error);
         }
@@ -90,7 +90,8 @@ const Login = () => {
     }
 
     return (
-        <div className="login">
+        <div className='h-screen w-screen flex justify-center'>
+        <div className="login h-2/3 w-2/3 mt-12">
             <div className={`container-login ${isRightPanelActive ? 'right-panel-active' : ''}`} id="container-login">
                 <div className="form-container sign-up-container" id="signup-container-login">
                     <form id="signup-form-login" name='signup' onSubmit={onSubmitSignUp}>
@@ -139,7 +140,7 @@ const Login = () => {
                             onChange={onChangeSignIn} 
                             value={username} 
                             placeholder="Username" 
-                            id="signin-email-login" 
+                            id="signin-username-login" 
                             required 
                         />
                         {signInErrors.username && <p className="text-red-500 text-xs mt-1">{signInErrors.username}</p>}
@@ -171,6 +172,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
