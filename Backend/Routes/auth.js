@@ -53,31 +53,45 @@ router.post('/register', async (req, res) => {
 
     await user.save();
 
-    const mailOptions = {
-      from: "CapitalCompass",
-      to: su_email,
-      subject: 'Welcome to Our Website!',
-      html: `<p>Hello ${name},</p><p>Thank you for signing up on our website.</p><p>humari website boht khatarnak he</p><p>Best Regards,</p><p>CapitalCompass</p>`,
+    // Generate token for the new user
+    const payload = {
+      userId: user._id,
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error('Error sending email:', error);
-        return res.status(500).send('Error sending confirmation email');
-      } else {
-        console.log('Email sent:', info.response);
-        return res.status(200).send('Signup successful and email sent');
-      }
-    });
+    jwt.sign(
+      payload,
+      process.env.JWT_SECRET,
+      { expiresIn: '24h' }, // Set to desired expiry time
+      (err, token) => {
+        if (err) {
+          console.error('Error signing token:', err);
+          return res.status(500).json({ message: 'Server error' });
+        }
 
-    console.log('User registered successfully:', user);
+        const mailOptions = {
+          from: "CapitalCompass",
+          to: su_email,
+          subject: 'Welcome to Our Website!',
+          html: `<p>Hello ${name},</p><p>Thank you for signing up on our website.</p><p>humari website boht khatarnak he</p><p>Best Regards,</p><p>CapitalCompass</p>`,
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+            console.error('Error sending email:', error);
+            return res.status(500).send('Error sending confirmation email');
+          } else {
+            console.log('Email sent:', info.response);
+            return res.status(200).json({ token }); // Return token on successful registration
+          }
+        });
+      }
+    );
   } catch (error) {
     console.error('Error registering user:', error);
     res.status(500).json({ message: 'Server error' });
   }
 });
 
-// Login
 // Login
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
@@ -103,7 +117,7 @@ router.post('/login', async (req, res) => {
     jwt.sign(
       payload,
       process.env.JWT_SECRET,
-      { expiresIn: '1h' },
+      { expiresIn: '24h' }, // Set to desired expiry time
       (err, token) => {
         if (err) {
           console.error('Error signing token:', err);
@@ -119,6 +133,5 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
-
 
 module.exports = router;

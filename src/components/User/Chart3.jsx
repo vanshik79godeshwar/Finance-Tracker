@@ -1,6 +1,6 @@
 import React from 'react';
 import { Chart as ChartJs, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import { useGlobalContext } from '../../context/GlobalContext';
 
 ChartJs.register(ArcElement, Tooltip, Legend);
@@ -22,14 +22,19 @@ function CategoryBreakdown() {
         expenseCategories[category] += amount;
     });
 
+    const modernColors = [
+        '#FFA726', '#FF7043', '#FFCA28', '#66BB6A', '#29B6F6', '#AB47BC', // Light and modern colors
+        '#26C6DA', '#8D6E63', '#FFEB3B', '#D4E157', '#5C6BC0', '#42A5F5'
+    ];
+
     const incomeData = {
         labels: Object.keys(incomeCategories),
         datasets: [
             {
                 label: 'Income',
                 data: Object.values(incomeCategories),
-                backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'],
-                borderColor: ['rgba(54, 162, 235, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+                backgroundColor: modernColors.slice(0, Object.keys(incomeCategories).length),
+                borderColor: modernColors.slice(0, Object.keys(incomeCategories).length).map(color => `${color}B3`), // Adding some opacity to borders
                 borderWidth: 1,
             },
         ],
@@ -41,14 +46,15 @@ function CategoryBreakdown() {
             {
                 label: 'Expenses',
                 data: Object.values(expenseCategories),
-                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'],
-                borderColor: ['rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+                backgroundColor: modernColors.slice(0, Object.keys(expenseCategories).length),
+                borderColor: modernColors.slice(0, Object.keys(expenseCategories).length).map(color => `${color}B3`),
                 borderWidth: 1,
             },
         ],
     };
 
     const options = {
+        cutout: '70%', // Reducing the width of the doughnut
         plugins: {
             legend: {
                 position: 'top',
@@ -72,16 +78,16 @@ function CategoryBreakdown() {
 
     return (
         <div className="flex flex-col md:flex-row shadow-2xl mb-7 mt-2 ">
-            <div className="flex-1   p-4 rounded-lg m-2">
+            <div className="flex-1 p-4 rounded-lg m-2">
                 <h3 className="text-center mb-4 text-white font-semibold text-lg">Income Breakdown by Category</h3>
                 <div className="w-96 h-96 mx-auto">
-                    <Pie data={incomeData} options={options} />
+                    <Doughnut data={incomeData} options={options} />
                 </div>
             </div>
-            <div className="flex-1   p-4 rounded-lg m-2">
+            <div className="flex-1 p-4 rounded-lg m-2">
                 <h3 className="text-center mb-4 text-white font-semibold text-lg">Expense Breakdown by Category</h3>
                 <div className="w-96 h-96 mx-auto">
-                    <Pie data={expenseData} options={options} />
+                    <Doughnut data={expenseData} options={options} />
                 </div>
             </div>
         </div>
