@@ -11,6 +11,7 @@ const connectDB = async () => {
     });
     console.log('MongoDB Connected...');
   } catch (err) {
+    console.log("problem daatbase.js meij hai")
     console.error(err.message);
     process.exit(1);
   }

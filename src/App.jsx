@@ -6,6 +6,7 @@ import Login from './Page/Login.jsx';
 import User from './Page/User.jsx';
 import PrivateRoute from './PrivateRoute.jsx';
 import Test from './Page/Test.jsx';
+import ContactUs from './Page/ContactUs.jsx';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Blogs" element={<Test />} />
+       <Route path="/ContactUs" element={<ContactUs />} />
+        
         <Route
           path="/:username/*"
           element={<PrivateRoute element={<User />} />}

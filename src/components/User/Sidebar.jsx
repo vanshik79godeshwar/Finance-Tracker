@@ -12,11 +12,11 @@ const Sidebar = ({ user }) => {
         { name: 'Dashboard', path: '/dashboard', icon: <FaTachometerAlt /> },
         { name: 'Notifications', path: '/notifications', icon: <FaBell /> },
         { name: 'Messages', path: '/messages', icon: <FaEnvelope /> },
-        { name: 'Activity', path: '/activity', icon: <FaChartLine /> },
+        { name: 'budget', path: '/budget', icon: <FaChartLine /> },
         { name: 'Analytics', path: '/analytics', icon: <FaChartPie /> },
         { name: 'Reports', path: '/reports', icon: <FaFileAlt /> },
         { name: 'Integrations', path: '/integrations', icon: <FaPuzzlePiece /> },
-        { name: 'API', path: '/api', icon: <FaCode /> },
+         { name: 'api', path: '/', icon: <FaCode /> },
         { name: 'Billing', path: '/billing', icon: <FaCreditCard /> },
     ];
 

@@ -1,0 +1,22 @@
+.budget-calculator {
+    background-color: #121212;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .calculator-container {
+    background-color: #1d1d1d;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .values {
+    margin-top: 20px;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+  
