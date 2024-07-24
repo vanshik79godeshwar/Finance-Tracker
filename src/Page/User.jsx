@@ -7,6 +7,8 @@ import Settings from './Settings';
 import Dashboard from './Dashboard';
 import Gold from './Gold';
 import Budget from './Budget';
+import Income from './Income';
+import Expense from './Expense';
 import { Currency } from 'lucide-react';
 
 const User = () => {
@@ -54,6 +56,8 @@ const User = () => {
           <Route path="currency" element={<Currency user={userData} />} />
           <Route path="history" element={<History user={userData} />} />
           <Route path="budget" element={<Budget user={userData} />} />
+          <Route path="expense" element={<Expense user={userData}/>} />
+          <Route path="income" element={<Income user={userData} />} />
           <Route path="*" element={<h1>Not found</h1>} />
         </Route>
       </Routes>

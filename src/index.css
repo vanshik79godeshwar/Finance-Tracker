@@ -14,3 +14,28 @@
   --tw-gradient-from: theme('colors.I');
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, theme('colors.black'));
 }
+
+/* Custom scrollbar styles */
+.sidebar::-webkit-scrollbar,
+.content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.content::-webkit-scrollbar-thumb {
+  background-color: rgb(216, 207, 207);
+  border-radius: 12px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.content::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(220, 215, 215, 0.5);
+}
+
+.content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-track{
+  background: #1e1e1e;
+}
