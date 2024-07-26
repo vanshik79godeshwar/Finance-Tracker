@@ -78,9 +78,9 @@ const FinanceDashboard = ({ user }) => {
 
   if (loading) {
     return (
-      <div className='flex justify-center font-bold size-24 h-full w-full items-center'>
+      <div className='flex justify-center font-bold size-24 h-full w-full items-center gap-4'>
         <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
-          <circle cx="50" cy="50" r="40" stroke="#3498db" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="0" stroke-linecap="round">
+          <circle cx="50" cy="50" r="40" stroke="#3498db" strokeWidth="8" strokeDasharray="251.2" strokeDashoffset="0" strokeLinecap="round">
             <animateTransform
               attributeName="transform"
               type="rotate"
@@ -98,7 +98,7 @@ const FinanceDashboard = ({ user }) => {
           </circle>
         </svg>
 
-        Loading...</div>
+        Scrapping the data...</div>
     );
   }
 
@@ -116,7 +116,8 @@ const FinanceDashboard = ({ user }) => {
             data={filteredSensexData}
             label="Sensex"
             title="Sensex Data"
-            lineColor="#4bc0c0"
+            //lineColor="#4bc0c0"
+            lineColor={`${filteredSensexData[0] - filteredSensexData[filteredSensexData.length - 1] > 0 ? '#4bc0c0' : '#ff6384'}`}
           />
           <div className='w-full flex justify-center mt-4'>
             <button
@@ -151,7 +152,7 @@ const FinanceDashboard = ({ user }) => {
               <p>{sensexChange.Percentage}%</p>
             </div>
             <div className='p-4 border rounded-lg shadow-sm flex items-center space-x-2'>
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="8" fill="red">
                   <animate attributeName="opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite" />
                 </circle>
@@ -205,7 +206,7 @@ const FinanceDashboard = ({ user }) => {
               <p>{niftyChange.Percentage}%</p>
             </div>
             <div className='p-4 border rounded-lg shadow-sm flex items-center space-x-2'>
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="8" fill="red">
                   <animate attributeName="opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite" />
                 </circle>
