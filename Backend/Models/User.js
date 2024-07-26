@@ -18,6 +18,41 @@ const userSchema = new mongoose.Schema({
   avatar: {
     type: String,
   },
-},{timestamp: true});
+  firstName: {
+    type: String,
+  },
+  lastName: {
+    type: String,
+  },
+  mobileNumber: {
+    type: String,
+  },
+  linkedinId: {
+    type: String,
+  },
+  instagramId: {
+    type: String,
+  },
+  xId: {
+    type: String,
+  },
+  socialMediaIds: {
+    type: Map,
+    of: String,
+  },
+  gender: {
+    type: String,
+    enum: ['Male', 'Female', 'Other'],
+  },
+  bio: {
+    type: String,
+  },
+  companyOrCollege: {
+    type: String,
+  },
+  birthDate: {
+    type: Date,
+  }
+}, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema) || mongoose.models.User;

@@ -117,7 +117,7 @@ const FinanceDashboard = ({ user }) => {
             label="Sensex"
             title="Sensex Data"
             //lineColor="#4bc0c0"
-            lineColor={`${filteredSensexData[0] - filteredSensexData[filteredSensexData.length - 1] > 0 ? '#4bc0c0' : '#ff6384'}`}
+            lineColor={`${filteredSensexData[0] > filteredSensexData[filteredSensexData.length - 1] ? '#ff6384' : '#4bc0c0'}`}
           />
           <div className='w-full flex justify-center mt-4'>
             <button
