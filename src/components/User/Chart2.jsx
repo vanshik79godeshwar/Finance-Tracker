@@ -3,6 +3,7 @@ import { Chart as ChartJs, CategoryScale, LinearScale, PointElement, LineElement
 import { Line } from 'react-chartjs-2';
 import { useGlobalContext } from '../../context/GlobalContext';
 import { dateFormat } from '../../utils/dateFormat';
+//import { duration } from 'moment';
 
 ChartJs.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement);
 
@@ -22,7 +23,7 @@ function Chart() {
         combinedData[date].expense += expense.amount;
     });
 
-    // Sort dates
+     
     const sortedDates = Object.keys(combinedData).sort((a, b) => new Date(a) - new Date(b));
 
     // Calculate cumulative values
@@ -39,6 +40,8 @@ function Chart() {
     });
 
     const data = {
+
+
         labels: cumulativeData.map(({ date }) => date),
         datasets: [
             {
@@ -52,6 +55,8 @@ function Chart() {
                 pointHoverBorderColor: 'rgba(75, 192, 192, 1)',
                 fill: false,
                 tension: 0.4,
+                 
+                
             },
             {
                 label: 'Cumulative Expenses',
@@ -64,8 +69,10 @@ function Chart() {
                 pointHoverBorderColor: 'rgba(255, 99, 132, 1)',
                 fill: false,
                 tension: 0.4,
+                 
             },
         ],
+         
     };
 
     const options = {
@@ -80,6 +87,7 @@ function Chart() {
                         family: 'Arial, sans-serif',
                     },
                 },
+                 
             },
             title: {
                 display: true,
@@ -127,6 +135,7 @@ function Chart() {
                 },
             },
         },
+         
     };
 
     return (
