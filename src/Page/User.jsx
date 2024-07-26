@@ -6,6 +6,7 @@ import Help from './Help';
 import Settings from './Settings';
 import Dashboard from './Dashboard';
 import Gold from './Gold';
+import Budget from './Budget';
 import Income from './Income';
 import Expense from './Expense';
 import ETF from './ETF';
@@ -54,6 +55,8 @@ const User = () => {
           <Route path="dashboard" element={<Dashboard user={userData} />} />
           <Route path="gold" element={<Gold user={userData} />} />
           <Route path="currency" element={<Currency user={userData} />} />
+          <Route path="history" element={<History user={userData} />} />
+          <Route path="budget" element={<Budget user={userData} />} />
           <Route path="expense" element={<Expense user={userData}/>} />
           <Route path="income" element={<Income user={userData} />} />
           <Route path="etf" element={<ETF user={userData} />} />
