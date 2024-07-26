@@ -15,6 +15,7 @@ const Sidebar = ({ user }) => {
         { name: 'budget', path: '/budget', icon: <FaChartLine /> },
         { name: 'Analytics', path: '/analytics', icon: <FaChartPie /> },
         { name: 'Reports', path: '/reports', icon: <FaFileAlt /> },
+        { name: 'ETF', path: '/etf', icon: <FaFileAlt /> },
         { name: 'Integrations', path: '/integrations', icon: <FaPuzzlePiece /> },
         { name: 'Expense', path: '/expense', icon: <FaPuzzlePiece /> },
         { name: 'Income', path: '/income', icon: <FaCode /> },

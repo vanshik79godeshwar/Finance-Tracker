@@ -33,6 +33,7 @@ app.use('/api/protected', require('./Routes/protected'));
 app.use('/api/user', require('./Routes/UserRoutes'));
 app.use('/api/transactions', authMiddleware,require('./Routes/transactions'));
 app.use('/api/get-user', require('./Routes/getUser'));
+app.use('/api/etf', require('./Routes/etf'));
 
 app.get('/api/news', async (req, res) => {
   const query = req.query.query || 'Finance'; 
