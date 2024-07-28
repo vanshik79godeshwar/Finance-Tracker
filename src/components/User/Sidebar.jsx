@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaUser, FaQuestionCircle, FaCog, FaTachometerAlt, FaBell, FaEnvelope, FaChartLine, FaChartPie, FaFileAlt, FaPuzzlePiece, FaCode, FaCreditCard } from 'react-icons/fa';
+import { FaUser, FaQuestionCircle, FaCog, FaTachometerAlt, FaBell, FaEnvelope, FaChartLine, FaChartPie, FaFileAlt, FaPuzzlePiece, FaCode, FaCreditCard, FaHome } from 'react-icons/fa'; // Import FaHome
 import BrandLogo from '../../assets/Brand_LOGO.png';
-
 
 const Sidebar = ({ user }) => {
     const sections = [
@@ -14,6 +13,7 @@ const Sidebar = ({ user }) => {
         { name: 'Messages', path: '/messages', icon: <FaEnvelope /> },
         { name: 'budget', path: '/budget', icon: <FaChartLine /> },
         { name: 'Analytics', path: '/analytics', icon: <FaChartPie /> },
+        { name: 'Communities', path: '/Server', icon: <FaChartPie /> },
         { name: 'Reports', path: '/reports', icon: <FaFileAlt /> },
         { name: 'ETF', path: '/etf', icon: <FaFileAlt /> },
         { name: 'Integrations', path: '/integrations', icon: <FaPuzzlePiece /> },
@@ -26,8 +26,11 @@ const Sidebar = ({ user }) => {
 
     return (
         <div className="flex flex-col w-64 h-screen px-4 py-8 bg-Black border-r dark:bg-gray-800 dark:border-gray-600 md:relative md:h-auto md:overflow-y-auto md:mt-0 md:border-none">
-            <div className='flex flex-row justify-start'>
-            <img className='h-8 w-8' src={BrandLogo}/>
+            <div className='flex flex-row justify-between items-center'>
+                <img className='h-8 w-8' src={BrandLogo} alt="Brand Logo" />
+                <Link to="/" className="p-2 text-2xl rounded-full hover:bg-gray-700 dark:hover:bg-gray-600">
+                    <FaHome className="text-gray-200 dark:text-gray-100" />
+                </Link>
             </div>
             <div className="flex flex-col items-center mt-6 -mx-2 mb-7">
                 <div className='p-1 border rounded-full mb-7'>
@@ -46,8 +49,7 @@ const Sidebar = ({ user }) => {
                     {sections.map((section, index) => (
                         <Link
                             key={index}
-                            
-                            className= {` flex items-center px-4 py-2 text-gray-200 rounded-md hover:bg-gray-700 hover:text-white dark:text-gray-100 dark:hover:bg-gray-600 ${window.location.pathname === `/${user.username}${section.path}` ? 'bg-gray-500' : ''}`}
+                            className={`flex items-center px-4 py-2 text-gray-200 rounded-md hover:bg-gray-700 hover:text-white dark:text-gray-100 dark:hover:bg-gray-600 ${window.location.pathname === `/${user.username}${section.path}` ? 'bg-gray-500' : ''}`}
                             to={`/${user.username}${section.path}`}
                         >
                             {section.icon}

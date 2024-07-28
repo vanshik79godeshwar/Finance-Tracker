@@ -78,27 +78,34 @@ const FinanceDashboard = ({ user }) => {
 
   if (loading) {
     return (
-      <div className='flex justify-center font-bold size-24 h-full w-full items-center gap-4'>
+      <div className='flex justify-center font-bold text-3xl h-full w-full items-center gap-4'>
         <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
-          <circle cx="50" cy="50" r="40" stroke="#3498db" strokeWidth="8" strokeDasharray="251.2" strokeDashoffset="0" strokeLinecap="round">
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style={{ stopColor: "#3498db", stopOpacity: 1 }} />
+              <stop offset="100%" style={{ stopColor: "#9b59b6", stopOpacity: 1 }} />
+            </linearGradient>
+          </defs>
+          <circle cx="50" cy="50" r="40" stroke="url(#gradient)" strokeWidth="8" strokeDasharray="251.2" strokeDashoffset="0" strokeLinecap="round">
             <animateTransform
               attributeName="transform"
               type="rotate"
               from="0 50 50"
               to="360 50 50"
-              dur="1s"
+              dur="1.5s"
               repeatCount="indefinite"
             />
             <animate
               attributeName="stroke-dashoffset"
               values="0;251.2;0"
-              dur="1s"
+              dur="1.5s"
               repeatCount="indefinite"
             />
           </circle>
         </svg>
+        <span>Scrapping the data...</span>
+      </div>
 
-        Scrapping the data...</div>
     );
   }
 
