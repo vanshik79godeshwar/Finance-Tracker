@@ -13,7 +13,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/user1/profile1', {
+        const response = await axios.get('https://finance-tracker-backend-dhar.onrender.com/api/user1/profile1', {
           headers: { 'x-auth-token': localStorage.getItem('token') }
         });
         setUser(response.data);
