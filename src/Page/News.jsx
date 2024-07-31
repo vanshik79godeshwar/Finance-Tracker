@@ -11,7 +11,7 @@ export default function News() {
 
   const fetchNews = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/news?query=${query}`);
+      const response = await axios.get(`https://finance-tracker-backend-dhar.onrender.com/api/news?query=${query}`);
       setArticles(response.data.articles);
     } catch (error) {
       setError(error);

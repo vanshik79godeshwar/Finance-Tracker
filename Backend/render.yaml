@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: your-node-app
+    env: node
+    buildCommand: |
+      pip install -r requirements.txt
+      npm install
+    startCommand: npm start
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.9"

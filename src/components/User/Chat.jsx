@@ -4,7 +4,7 @@ import axios from 'axios';
 import { io } from 'socket.io-client';
 import Message from './Message';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://finance-tracker-backend-dhar.onrender.com');
 
 const Chat = ({ group, sender, senderAvatar }) => {
     const [messages, setMessages] = useState([]);
@@ -13,7 +13,7 @@ const Chat = ({ group, sender, senderAvatar }) => {
     useEffect(() => {
         const fetchMessages = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/chat/${group}`);
+                const response = await axios.get(`https://finance-tracker-backend-dhar.onrender.com/api/chat/${group}`);
                 const data = Array.isArray(response.data) ? response.data : [];
                 setMessages(data);
             } catch (err) {
