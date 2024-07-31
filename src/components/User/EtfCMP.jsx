@@ -55,7 +55,7 @@ const FinanceDashboard = ({ user }) => {
     };
 
     fetchLiveData();
-    const intervalId = setInterval(fetchLiveData, 10000); // Refresh every 5 seconds
+    const intervalId = setInterval(fetchLiveData, 10000); // har 10 sec me data fetch karega
 
     return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, []);
