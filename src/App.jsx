@@ -7,7 +7,7 @@ import User from './Page/User.jsx';
 import PrivateRoute from './PrivateRoute.jsx';
 import Test from './Page/Test.jsx';
 import ContactUs from './Page/ContactUs.jsx';
-
+import Services from './Page/Services.jsx';
 function App() {
   return (
     <Router>
@@ -17,7 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/Blogs" element={<Test />} />
        <Route path="/ContactUs" element={<ContactUs />} />
-        
+       <Route path="/Services" element={<Services/>} />
         <Route
           path="/:username/*"
           element={<PrivateRoute element={<User />} />}

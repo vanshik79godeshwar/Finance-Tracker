@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../components/User/Sidebar';
-import './Help.css';
-
+import './Help.css'; 
 export default function Help({ user }) {
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -84,7 +83,8 @@ export default function Help({ user }) {
   const handleToggle = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
-
+  
+  
   return (
     <div className="flex">
       <Sidebar user={user} />
@@ -117,8 +117,12 @@ export default function Help({ user }) {
               ))}
             </div>
           </div>
+          
         </div>
+      
       </div>
     </div>
   );
 }
+
+

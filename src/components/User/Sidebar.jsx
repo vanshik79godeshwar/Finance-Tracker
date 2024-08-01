@@ -25,7 +25,7 @@ const Sidebar = ({ user }) => {
     console.log('User data:', user);
 
     return (
-        <div className="flex flex-col w-64 h-screen px-4 py-8 bg-Black border-r dark:bg-gray-800 dark:border-gray-600 md:relative md:h-auto md:overflow-y-auto md:mt-0 md:border-none">
+        <div className="flex flex-col w-64 h-screen px-4 py-8 bg-Black border-r dark:bg-black-800 dark:border-gray-600 md:relative md:h-auto md:overflow-y-auto md:mt-0 md:border-none">
             <div className='flex flex-row justify-between items-center'>
                 <img className='h-8 w-8' src={BrandLogo} alt="Brand Logo" />
                 <Link to="/" className="p-2 text-2xl rounded-full hover:bg-gray-700 dark:hover:bg-gray-600">
@@ -40,8 +40,8 @@ const Sidebar = ({ user }) => {
                         alt="avatar"
                     />
                 </div>
-                <h4 className="mx-2 mt-2 text-lg font-medium text-gray-200">{user.username}</h4>
-                <p className="mx-2 mt-1 text-sm font-medium text-gray-400">{user.email}</p>
+                <h4 className="mx-2 mt-2 text-lg font-medium text-black-200">{user.username}</h4>
+                <p className="mx-2 mt-1 text-sm font-medium text-black-400">{user.email}</p>
             </div>
 
             <div className="flex-1 mt-6 overflow-y-auto">
@@ -49,7 +49,7 @@ const Sidebar = ({ user }) => {
                     {sections.map((section, index) => (
                         <Link
                             key={index}
-                            className={`flex items-center px-4 py-2 text-gray-200 rounded-md hover:bg-gray-700 hover:text-white dark:text-gray-100 dark:hover:bg-gray-600 ${window.location.pathname === `/${user.username}${section.path}` ? 'bg-gray-500' : ''}`}
+                            className={`flex items-center px-4 py-2 text-black-200 rounded-md hover:bg-gray-700 hover:text-white dark:text-gray-100 dark:hover:bg-gray-600 ${window.location.pathname === `/${user.username}${section.path}` ? 'bg-gray-500' : ''}`}
                             to={`/${user.username}${section.path}`}
                         >
                             {section.icon}
