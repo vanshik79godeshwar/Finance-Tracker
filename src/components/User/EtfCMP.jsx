@@ -10,7 +10,7 @@ const FinanceDashboard = ({ user }) => {
   const [liveSensex, setLiveSensex] = useState(null);
   const [liveNifty, setLiveNifty] = useState(null);
 
-  const BASE_URL = "http://localhost:5000/api/etf/";
+  const BASE_URL = "https://finance-tracker-backend-dhar.onrender.com/api/etf/";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,7 +55,7 @@ const FinanceDashboard = ({ user }) => {
     };
 
     fetchLiveData();
-    const intervalId = setInterval(fetchLiveData, 10000); // Refresh every 5 seconds
+    const intervalId = setInterval(fetchLiveData, 10000); // har 10 sec me data fetch karega
 
     return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, []);

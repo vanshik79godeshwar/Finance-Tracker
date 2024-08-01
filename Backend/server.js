@@ -87,7 +87,7 @@ app.get('/api/news', async (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.send('Hello World from backend');
 });
 
 io.on('connection', (socket) => {

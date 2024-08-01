@@ -87,7 +87,7 @@ const EditProfileModal = ({ user, onClose }) => {
     formDataToSend.append('birthDate', birthDate);
 
     try {
-      const response = await axios.put('http://localhost:5000/api/user1/profile', formDataToSend, {
+      const response = await axios.put('https://finance-tracker-backend-dhar.onrender.com/api/user1/profile', formDataToSend, {
         headers: { 
           'Content-Type': 'multipart/form-data',
           'x-auth-token': localStorage.getItem('token') 
