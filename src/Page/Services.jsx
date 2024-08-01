@@ -1,57 +1,29 @@
-import React, { useState } from 'react';
-
-function AppointmentForm() {
-  const [name, setName] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
-    alert(`Appointment booked for ${name} on ${date} at ${time}`);
-  };
-
-  return (
-    <div>
-      <h2>Book an Appointment</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Name:
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </label>
+import React, { useState } from 'react'; 
+import ServicesBox from '../components/User/ServicesBox.jsx';
+import AppointmentForm from '../components/User/AppointmentForm.jsx';
+import '../components/User/AF.css'
+import Navbar from  '../components/Navbar';
+ 
+ 
+function ServicesPage() {
+    return (
+        <>
+<div className="app">
+       
+       <Navbar />
+     </div>
+      <div className="services-page">
+        <div className="services-box">
+          <ServicesBox />
         </div>
-        <div>
-          <label>
-            Date:
-            <input
-              type="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-              required
-            />
-          </label>
+        <div className="appointment-form">
+          <AppointmentForm />
         </div>
-        <div>
-          <label>
-            Time:
-            <input
-              type="time"
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-              required
-            />
-          </label>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
-}
+      </div>
+      </>
+    );
+  }
+  
+  export default ServicesPage;
 
-export default AppointmentForm;
+ 

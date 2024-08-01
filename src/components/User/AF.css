@@ -1,0 +1,231 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .services-page {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .services-box, .appointment-form {
+    flex: 1; /* Each takes up half of the page */
+    padding: 20px;
+  }
+  
+ 
+  
+  .serv-box-container {
+    background-color: #000000;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .serv-toggle-btn {
+    background-color: #1f3a58;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .serv-toggle-btn:hover {
+     background-color: #ffffff77;
+    box-shadow: #ffffff;
+  }
+  
+  .serv-box-content {
+    overflow: hidden;
+    word-spacing: 5%;
+    transition: max-height 10s ease-out;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .serv-box-content.closed {
+    max-height: 0;
+    opacity: 0;
+  }
+  
+  .serv-box-content.open {
+    max-height: 1000px; /* Arbitrary value to accommodate content */
+    opacity: 1;
+  }
+
+  .bigfont{
+    font-size: 30px;
+    color: #4f6b8b;
+  }
+  
+  .serv-heading {
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .serv-form-container {
+     background-color: #080808;
+    
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .serv-form-group {
+     
+    margin-bottom: 5px;
+    margin-left: 15px;;
+  }
+  
+  .serv-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: hsl(212, 18%, 56%);
+  }
+  
+  .serv-input,
+  .serv-textarea {
+    
+    width: 100%;
+    padding: 10px;
+    border: 1px solid hsl(241, 60%, 22%);
+    border-radius: 4px;
+  }
+  
+  .serv-textarea {
+    resize: vertical;
+  }
+  
+  .serv-submit-btn { 
+    --bg: #ffffff;
+  --text-color: #fff;
+   
+  width: 150px;
+  border: none;
+  background: var(--bg);
+  color: var(--text-color); 
+  font-weight: bold;
+ 
+  text-transform: uppercase;
+  transition: 0.2s;
+  border-radius: 5px;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  box-shadow: #92a5e49c 0px 7px 2px, #000 0px 8px 5px;
+  }
+  
+  
+  
+  .serv-submit-btn:active{
+   
+    top: 4px;
+    box-shadow: #14127a 0px 3px 2px,#000 0px 3px 5px;
+  }
+
+/* three dots */
+
+.radio-input {
+
+  display: flex;
+ height: 210px;
+  align-items: center;
+}
+
+.glass {
+  z-index: 2;
+  height: 110%;
+  width: 95px;
+  margin-right: 25px;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 35px;
+  box-shadow: rgba(50, 50, 93, 0.2) 0px 25px 50px -10px,
+    rgba(0, 0, 0, 0.25) 0px 10px 30px -15px,
+    rgba(10, 37, 64, 0.26) 0px -2px 6px 0px inset;
+  backdrop-filter: blur(8px);
+}
+
+.glass-inner {
+  width: 100%;
+  height: 100%;
+  border-color: rgba(22, 39, 75, 0.45);
+  border-width: 9px;
+  border-style: solid;
+  border-radius: 30px;
+}
+
+.servicetext{
+  font-family:Georgia, 'Times New Roman', Times, serif;
+   color: rgb(200, 217, 231);
+   letter-spacing: 2px;
+   word-spacing: 20px;
+   font-size: 18px;
+   line-height: 35px;
+}
+
+.selectorrrrr {
+  display: flex;
+  flex-direction: column;
+}
+
+.choice {
+  margin: 10px 0 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.choice > div {
+  position: relative;
+  width: 41px;
+  height: 41px;
+  margin-right: 15px;
+  z-index: 0;
+}
+
+.choice-circle {
+  appearance: none;
+  height: 100%;
+  width: 100%;
+  border-radius: 100%;
+  border-width: 9px;
+  border-style: solid;
+  border-color: rgba(34, 46, 99, 0.45);
+  cursor: pointer;
+  box-shadow: 0px 0px 20px -13px rgb(20, 39, 92), 0px 0px 20px -14px gray inset;
+}
+
+.ball {
+  z-index: 1;
+  position: absolute;
+  inset: 0px;
+  transform: translateX(-95px);
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -10px 10px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -15px 15px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -40px 20px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px,
+    0px -1px 15px -8px rgba(0, 0, 0, 0.09);
+  border-radius: 100%;
+  transition: transform 800ms cubic-bezier(1, -0.4, 0, 1.4);
+  background-color: rgb(131, 143, 177);
+}
+
+.choice-circle:checked + .ball {
+  transform: translateX(0px);
+}
+
+.choice-name {
+  color: rgb(107, 130, 156);
+  font-size: 15px;
+  font-weight: 900;
+  font-family: monospace;
+  cursor: pointer;
+}
+
+
+
+
+
+
+

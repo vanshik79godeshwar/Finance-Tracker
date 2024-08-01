@@ -1,4 +1,46 @@
 /* src/components/Help.css */
+ 
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 50px;
+  width: 600px;
+  border-radius: 10px;
+  color: rgb(227, 230, 238);
+  cursor: pointer;
+  transition: 450ms;
+}
+
+ 
+
+.card p.tip {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.card p.second-text {
+  font-size: 0.8em;
+  display: none; /* Initially hide content */
+}
+
+.card-expanded p.second-text {
+  display: block; /* Show content when card is expanded */
+}
+
+.card:hover {
+  transform: scale(1.4);
+}
+
+.cards:hover > .card:not(:hover) {
+  filter: blur(10px);
+  transform: scale(1);
+}
+
+
 .help-page {
   font-family: Arial, sans-serif;
   background-color: #000000;
@@ -9,7 +51,7 @@
   justify-content: space-between;
   background-color: #1a243b; /* Light peach color */
   padding: 20px;
-}
+} 
 
 .intro h1 {
   margin: 0;

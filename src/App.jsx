@@ -8,7 +8,8 @@ import PrivateRoute from './PrivateRoute.jsx';
 import Test from './Page/Test.jsx';
 import ContactUs from './Page/ContactUs.jsx';
 import Services from './Page/Services.jsx';
-function App() {
+import About from './Page/About.jsx';
+function App() { 
   return (
     <Router>
       <Routes>
@@ -18,6 +19,7 @@ function App() {
         <Route path="/Blogs" element={<Test />} />
        <Route path="/ContactUs" element={<ContactUs />} />
        <Route path="/Services" element={<Services/>} />
+       <Route path="/about" element={<About />} />
         <Route
           path="/:username/*"
           element={<PrivateRoute element={<User />} />}
