@@ -1,0 +1,66 @@
+/* src/components/Help.css */
+.help-page {
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+}
+
+.body-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: #616368; /* Light peach color */
+  padding: 20px;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.search-box {
+  background-color: #012f68; /* Dark blue color */
+  color: rgb(255, 248, 248);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.search-box p {
+  margin: 0 0 10px 0;
+}
+
+.featured-articles {
+  padding: 20px;
+}
+
+.featured-articles h2 {
+  margin-top: 0;
+}
+
+.articles-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
+
+.article {
+  background-color: #000000;
+  padding: 10px;
+  border: 1px solid #222969;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.article:hover {
+  background-color: #ffffff62;
+}
+
+.article-title {
+  font-weight: bold;
+}
+
+.article-content {
+  margin-top: 10px;
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 5px;
+}

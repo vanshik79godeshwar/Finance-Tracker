@@ -1,5 +1,5 @@
 import React from 'react';
-// import AnimatedIcon from '../components/User/AnimatedIcon';
+ 
 import '../components/User/AnimatedIcon.css'
 import Navbar from  '../components/Navbar';
  

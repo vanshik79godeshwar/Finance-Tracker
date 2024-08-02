@@ -13,7 +13,7 @@ const TypewriterEffect = () => {
         cursor
         cursorStyle="_"
         typeSpeed={40}  // Increase the typing speed (smaller value means faster typing)
-        deleteSpeed={30} // Increase the delete speed (smaller value means faster deleting)
+        deleteSpeed={40} // Increase the delete speed (smaller value means faster deleting)
         delaySpeed={1000}
         
       />
