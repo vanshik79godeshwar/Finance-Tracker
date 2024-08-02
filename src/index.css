@@ -10,6 +10,21 @@
 }
 
 
+.edu-au-vic-wa-nt-hand-Vanshik {
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+.lobster-regular {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 .bg-circular-gradient {
   --tw-gradient-from: theme('colors.I');
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, theme('colors.black'));
@@ -23,13 +38,14 @@
 
 .sidebar::-webkit-scrollbar-thumb,
 .content::-webkit-scrollbar-thumb {
-  background-color: rgb(216, 207, 207);
-  border-radius: 12px;
+  background-color: rgb(102, 70, 191,0.7);
+  border-radius: 20px;
 }
 
 .sidebar::-webkit-scrollbar-thumb:hover,
 .content::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(220, 215, 215, 0.5);
+  background-color: rgb(102, 70, 191,0.3);
+  cursor:grab;
 }
 
 .content::-webkit-scrollbar-track {
@@ -39,3 +55,5 @@
 .sidebar::-webkit-scrollbar-track{
   background: #1e1e1e;
 }
+
+

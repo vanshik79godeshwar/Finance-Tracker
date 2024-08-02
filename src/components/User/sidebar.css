@@ -6,7 +6,7 @@
 
 .sidebar::-webkit-scrollbar-thumb,
 .content::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.3); /* Color of the scrollbar thumb */
+  background-color: rgba(43, 44, 149, 0.3); /* Color of the scrollbar thumb */
   border-radius: 8px; /* Rounded corners for the scrollbar thumb */
 }
 

@@ -49,6 +49,16 @@ router.post('/register', async (req, res) => {
       email: su_email,
       password: hashedPassword,
       avatar: 'https://via.placeholder.com/150',
+      firstName: '',
+      lastName: '',
+      mobileNumber: '',
+      companyOrCollege: '',
+      birthDate: '',
+      bio: '',
+      gender: 'Other',
+      linkedinId: '',
+      instagramId: '',
+      xId: '',
     });
 
     await user.save();

@@ -1,4 +1,3 @@
-// routes/user.js
 const express = require('express');
 const router = express.Router();
 const User = require('../Models/User');
@@ -14,10 +13,9 @@ router.put('/profile', auth, upload.single('photo'), async (req, res) => {
         firstName,
         lastName,
         mobileNumber,
-        linkedinId,
-        instagramId,
-        xId,
-        socialMediaIds,
+        linkedinUrl,
+        instagramUrl,
+        xUrl,
         gender,
         bio,
         companyOrCollege,
@@ -30,10 +28,9 @@ router.put('/profile', auth, upload.single('photo'), async (req, res) => {
             firstName,
             lastName,
             mobileNumber,
-            linkedinId,
-            instagramId,
-            xId,
-            socialMediaIds,
+            linkedinId: linkedinUrl,       // Map linkedinUrl to linkedinId
+            instagramId: instagramUrl,     // Map instagramUrl to instagramId
+            xId: xUrl,                     // Map xUrl to xId
             gender,
             bio,
             companyOrCollege,
