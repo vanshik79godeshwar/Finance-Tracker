@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import Sidebar from '../components/User/Sidebar';
 import './Help.css'; // Ensure your CSS file is imported
 
@@ -88,7 +89,7 @@ export default function Help({ user }) {
             </div>
           </div>
           <div className="featured-articles">
-            <h2  >Commonly asked questions</h2>
+            <h2>Commonly Asked Questions</h2>
             <div className="cards">
               {articles.map((article, index) => (
                 <div
@@ -102,6 +103,15 @@ export default function Help({ user }) {
                   )}
                 </div>
               ))}
+              <br>
+              </br>
+
+              <p st>Still have questions for us?</p>
+              <div className="flex justify-center">
+                <Link to="/ContactUs" className="contact-link">
+                  Contact Us
+                </Link>
+              </div>
             </div>
           </div>
         </div>

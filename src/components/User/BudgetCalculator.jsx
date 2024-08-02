@@ -44,12 +44,12 @@ const BudgetCalculator = () => {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <Container maxWidth="sm" className="budget-calculator">
-        <Paper elevation={3} className="calculator-container">
-          <Typography variant="h4" gutterBottom>
+        <Paper elevation={3} className="budget-calculator-container">
+          <Typography variant="h4" gutterBottom className="budget-typography-heading">
             Budget Calculator
           </Typography>
           <Grid container spacing={2}>
-            <Grid item xs={12}>
+            <Grid item xs={12} className="budget-grid-item">
               <TextField
                 label="Monthly Salary"
                 type="number"
@@ -59,7 +59,7 @@ const BudgetCalculator = () => {
                 onChange={handleIncomeChange}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className="budget-grid-item">
               <TextField
                 label="Rent"
                 type="number"
@@ -69,7 +69,7 @@ const BudgetCalculator = () => {
                 onChange={handleRentChange}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className="budget-grid-item">
               <TextField
                 label="EMI"
                 type="number"
@@ -79,22 +79,31 @@ const BudgetCalculator = () => {
                 onChange={handleEmiChange}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className="budget-grid-item">
               <Button
                 variant="contained"
                 color="primary"
                 fullWidth
+                className="budget-button"
                 onClick={() => console.log('Calculate EMI button clicked!')}
               >
                 Calculate EMI
               </Button>
             </Grid>
           </Grid>
-          <div className="values">
-            <Typography variant="h6">Savings: {savings.toFixed(2)}</Typography>
-            <Typography variant="h6">Groceries: {groceries.toFixed(2)}</Typography>
-            <Typography variant="h6">Utilities: {utilities.toFixed(2)}</Typography>
-            <Typography variant="h6">Personal Expenses: {personalExpenses.toFixed(2)}</Typography>
+          <div className="budget-values">
+            <Typography variant="h6" className="budget-typography-value">
+              Savings: {savings.toFixed(2)}
+            </Typography>
+            <Typography variant="h6" className="budget-typography-value">
+              Groceries: {groceries.toFixed(2)}
+            </Typography>
+            <Typography variant="h6" className="budget-typography-value">
+              Utilities: {utilities.toFixed(2)}
+            </Typography>
+            <Typography variant="h6" className="budget-typography-value">
+              Personal Expenses: {personalExpenses.toFixed(2)}
+            </Typography>
           </div>
         </Paper>
       </Container>

@@ -8,7 +8,7 @@ const About = () => {
     <div className="app">
        
     <Navbar />
-    <div>
+    <div style={{marginTop: "-100px"}}>
       
       <iframe
         src="/aboutus.html"

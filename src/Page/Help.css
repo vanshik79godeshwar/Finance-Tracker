@@ -15,7 +15,18 @@
   transition: 450ms;
 }
 
- 
+.contact-link {
+  color: #1f3a58;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
 
 .card p.tip {
   font-size: 1.1em;

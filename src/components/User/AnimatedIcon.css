@@ -116,7 +116,7 @@
     box-sizing: border-box;
 }
 
-.form-group textarea {
+.form-group textarea { 
     resize: vertical;
 }
 
