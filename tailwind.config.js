@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -13,20 +14,18 @@ export default {
         Lobster: ['Lobster', 'cursive']
       },
       colors: {
-        primary: '#457814', // Example custom green color
-        secondary: '#D8345F', // Example custom red color
-        accent: '#1FB6FF', // Example custom blue color
-        // apne theme colors
-        A: '#133D5A', // Indigo dye
-        B: '#09111C', // Rich black
-        C: '#788E8A', // Battleship gray
-        D: '#266076', // Payne's gray
-        E: '#A0DEE3', // Non Photo blue
-        F: '#0F2C47', // Prussian blue
-        G: '#ADD8E6', // Light blue
-        H: '#30346D', // Space cadet
-        I : '#353935', // Olive
-        // new colors
+        primary: '#457814',
+        secondary: '#D8345F',
+        accent: '#1FB6FF',
+        A: '#133D5A',
+        B: '#09111C',
+        C: '#788E8A',
+        D: '#266076',
+        E: '#A0DEE3',
+        F: '#0F2C47',
+        G: '#ADD8E6',
+        H: '#30346D',
+        I : '#353935',
         Black: '#1e1e1e',
         DarkGray: '#2a2a2a',
         Blue: '#007acc',

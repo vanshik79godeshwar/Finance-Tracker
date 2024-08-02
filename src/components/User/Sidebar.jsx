@@ -19,6 +19,8 @@ const Sidebar = ({ user }) => {
         { name: 'Integrations', path: '/integrations', icon: <FaPuzzlePiece /> },
         { name: 'Expense', path: '/expense', icon: <FaPuzzlePiece /> },
         { name: 'Income', path: '/income', icon: <FaCode /> },
+        { name: 'Currency', path: '/currency', icon: <FaCode /> },
+        { name: 'EMI Calculator', path: '/emi', icon: <FaCode /> },
         { name: 'Billing', path: '/billing', icon: <FaCreditCard /> },
     ];
 

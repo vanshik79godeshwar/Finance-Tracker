@@ -1,8 +1,7 @@
 import React from 'react'
 import Sidebar from '../components/User/Sidebar'
-import CurrencyCMP from '../components/User/CurrencyCMP'
+import EmiCMP from '../components/User/EmiCMP'
 import '../components/User/sidebar.css';
-// import '../components/User/CurrencyCMP.module.css';
 
 
 export default function Profile({ user }) {
@@ -13,7 +12,7 @@ export default function Profile({ user }) {
         <Sidebar user={user} />
       </div>
       <div className="flex-1 bg-DarkGray text-White overflow-y-auto content">
-        <CurrencyCMP user={user} />
+        <EmiCMP user={user} />
       </div>
     </div>
   )
