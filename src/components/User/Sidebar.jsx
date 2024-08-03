@@ -27,7 +27,7 @@ const Sidebar = ({ user }) => {
     console.log('User data:', user);
 
     return (
-        <div className="flex flex-col w-64 h-screen px-4 py-8 bg-Black border-r dark:bg-gray-800 dark:border-gray-600 md:relative md:h-auto md:overflow-y-auto md:mt-0 md:border-none">
+        <div className="flex flex-col w-64 h-screen px-4 py-8 bg-black border-r md:relative md:h-auto md:overflow-y-auto md:mt-0 md:border-none">
             <div className='flex flex-row justify-between items-center'>
                 <img className='h-8 w-8' src={BrandLogo} alt="Brand Logo" />
                 <Link to="/" className="p-2 text-2xl rounded-full hover:bg-gray-700 dark:hover:bg-gray-600">

@@ -1,4 +1,3 @@
-// server.js
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
@@ -31,7 +30,7 @@ const io = socketIo(server, {
 // Connect Database
 connectDB();
 
-app.use(express.json({ extended: false }));
+app.use(express.json());
 // Init Middleware
 app.use(bodyParser.json());
 
@@ -73,7 +72,7 @@ app.get('/api/news', async (req, res) => {
   }
 
   try {
-    const response = await axios.get(`https://newsapi.org/v2/everything?q=finance + ${query}`, {
+    const response = await axios.get(`http://newsapi.org/v2/everything?q=${query}`, {
       headers: { 'Authorization': `Bearer ${apiKey}` }
     });
     res.json(response.data);
@@ -123,7 +122,7 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('Client disconnected');
   });
-});
+});a
 
 // Start the server
 server.listen(PORT, () => {
