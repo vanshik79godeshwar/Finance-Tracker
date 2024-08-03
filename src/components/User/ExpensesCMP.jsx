@@ -24,7 +24,7 @@ function Expenses({user}) {
                     <h2 className="text-2xl flex justify-center mt-7 mb-7 text-E">Add Expense</h2>
                     <ExpenseForm user={user}/>
                 </div>
-                <div className="w-full md:w-1/2 h-4/5 overflow-y-auto flex flex-col gap-1 border p-7 rounded-lg backdrop-blur-sm text-E">
+                <div className="w-full md:w-1/2 h-4/5 overflow-y-auto sidebar flex flex-col gap-1 border p-7 rounded-lg backdrop-blur-sm text-E">
                     <h2 className="text-2xl flex justify-center mt-7 mb-7">Expense List</h2>
                     {expenses.map((expense) => {
                         const { _id, title, amount, date, category, description, type } = expense;

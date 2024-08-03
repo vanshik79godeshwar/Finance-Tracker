@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaUser, FaQuestionCircle, FaCog, FaTachometerAlt, FaBell, FaEnvelope, FaChartLine, FaChartPie, FaFileAlt, FaPuzzlePiece, FaCode, FaCreditCard, FaHome } from 'react-icons/fa'; // Import FaHome
+import { FaUser, FaQuestionCircle, FaCog, FaTachometerAlt, FaBell, FaEnvelope, FaChartLine, FaChartPie, FaFileAlt, FaPuzzlePiece, FaCode, FaCreditCard, FaHome } from 'react-icons/fa';
 import BrandLogo from '../../assets/Brand_LOGO.png';
+import PrivateRoute from '../../PrivateRoute'; // Import PrivateRoute
 
 const Sidebar = ({ user }) => {
     const sections = [
@@ -11,7 +12,7 @@ const Sidebar = ({ user }) => {
         { name: 'Dashboard', path: '/dashboard', icon: <FaTachometerAlt /> },
         { name: 'Notifications', path: '/notifications', icon: <FaBell /> },
         { name: 'Messages', path: '/messages', icon: <FaEnvelope /> },
-        { name: 'budget', path: '/budget', icon: <FaChartLine /> },
+        { name: 'Budget', path: '/budget', icon: <FaChartLine /> },
         { name: 'Analytics', path: '/analytics', icon: <FaChartPie /> },
         { name: 'Communities', path: '/Server', icon: <FaChartPie /> },
         { name: 'Reports', path: '/reports', icon: <FaFileAlt /> },
@@ -21,8 +22,6 @@ const Sidebar = ({ user }) => {
         { name: 'Income', path: '/income', icon: <FaCode /> },
         { name: 'Billing', path: '/billing', icon: <FaCreditCard /> },
     ];
-
-    console.log('User data:', user);
 
     return (
         <div className="flex flex-col w-64 h-screen px-4 py-8 bg-Black border-r dark:bg-gray-800 dark:border-gray-600 md:relative md:h-auto md:overflow-y-auto md:mt-0 md:border-none">
@@ -47,14 +46,18 @@ const Sidebar = ({ user }) => {
             <div className="flex-1 mt-6 overflow-y-auto">
                 <nav className="flex flex-col space-y-2">
                     {sections.map((section, index) => (
-                        <Link
+                        <PrivateRoute
                             key={index}
-                            className={`flex items-center px-4 py-2 text-gray-200 rounded-md hover:bg-gray-700 hover:text-white dark:text-gray-100 dark:hover:bg-gray-600 ${window.location.pathname === `/${user.username}${section.path}` ? 'bg-gray-500' : ''}`}
-                            to={`/${user.username}${section.path}`}
-                        >
-                            {section.icon}
-                            <span className="mx-4 font-medium">{section.name}</span>
-                        </Link>
+                            element={
+                                <Link
+                                    className={`flex items-center px-4 py-2 text-gray-200 rounded-md hover:bg-gradient-to-r from-gray-600 to-Black hover:text-white dark:text-gray-100 dark:hover:bg-gray-600 ${window.location.pathname === `/${user.username}${section.path}` ? 'bg-gray-500' : ''}`}
+                                    to={`/${user.username}${section.path}`}
+                                >
+                                    {section.icon}
+                                    <span className="mx-4 font-medium">{section.name}</span>
+                                </Link>
+                            }
+                        />
                     ))}
                 </nav>
             </div>
