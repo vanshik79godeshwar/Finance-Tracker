@@ -19,12 +19,9 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/material": "^5.16.5",
-<<<<<<< HEAD
     "axios": "^1.7.3",
-=======
     "@react-oauth/google": "^0.12.1",
     "axios": "^1.7.2",
->>>>>>> bed670b27db3d07c550dee4d949e9ecddad8547d
     "chart.js": "^4.4.3",
     "cloudinary": "^1.41.3",
     "config": "^3.3.12",
