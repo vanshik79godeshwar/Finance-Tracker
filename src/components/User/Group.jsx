@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Chat from './Chat';
 
-const GroupSelector = ({ sender, senderAvatar }) => {
+const GroupSelector = ({ sender, senderAvatar, id }) => {
   const [selectedGroup, setSelectedGroup] = useState('trading');
 
   return (
@@ -30,7 +30,7 @@ const GroupSelector = ({ sender, senderAvatar }) => {
           Investing
         </button>
       </div>
-      <Chat group={selectedGroup} sender={sender} senderAvatar={senderAvatar} className="h-1/2"/>
+      <Chat group={selectedGroup} sender={sender} senderAvatar={senderAvatar} id={id} className="h-1/2"/>
     </div>
   );
 };

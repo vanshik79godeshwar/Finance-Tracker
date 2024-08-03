@@ -1,5 +1,5 @@
 import React, { useEffect, useState }from'react';
-import AboutUs from ''
+//import AboutUs from '../../public/AboutUs.html';
 
 function App() {
   let[htmlFileString, setHtmlFileString] = useState();
