@@ -1,0 +1,116 @@
+/* src/components/Help.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+.help-page {
+  font-family: 'Roboto', sans-serif;
+  background-color: #000000;
+}
+
+.body-content {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1a1a1a; /* Dark gray color */
+  padding: 20px;
+  color: #ffffff;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.search-box {
+  background-color: #333333; /* Darker gray color */
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.search-box p {
+  margin: 0 0 10px 0;
+}
+
+.featured-articles {
+  padding: 20px;
+}
+
+.featured-articles h2 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accordion-item {
+  background-color: #151515;
+  border: 1px solid #444444;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.accordion-item:hover {
+  background-color: #222222;
+  transform: scale(1.02);
+}
+
+.accordion-title {
+  font-weight: bold;
+  padding: 15px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background-color: #111111;
+  padding: 0 15px;
+  border-top: 1px solid #444444;
+  color: #cccccc;
+  border-radius: 0 0 5px 5px;
+}
+
+.accordion-content.open {
+  max-height: 200px; /* Adjust according to your content size */
+  padding: 15px;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .arrow {
+  transform: rotate(180deg);
+}
+
+.contact-us-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.contact-us-button {
+  background-color: #1a73e8; /* Google blue */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-us-button:hover {
+  background-color: #1558b0;
+  transform: scale(1.05);
+}

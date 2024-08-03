@@ -31,6 +31,8 @@ const PieChart = () => {
             return `${tooltipItem.label}: ${value} (${percentage}%)`;
           },
         },
+        backgroundColor: '#333',
+        titleColor: '#FFD54F',
         titleAlign: 'center',
         bodyAlign: 'center',
         bodyColor: '#ffffff',
@@ -42,12 +44,6 @@ const PieChart = () => {
         position: 'top',
       },
     },
-    plugins: {
-      tooltip: {
-        backgroundColor: '#333',
-        titleColor: '#FFD54F',
-      },
-    },
     layout: {
       padding: 20,
     },
@@ -57,11 +53,10 @@ const PieChart = () => {
         borderColor: '#121212',
       },
     },
-    responsive: true,
   };
 
   return (
-    <div className="pie-chart-container p-4  rounded-lg shadow-lg">
+    <div className="pie-chart-container p-4 rounded-lg shadow-lg">
       <Pie data={data} options={options} />
     </div>
   );

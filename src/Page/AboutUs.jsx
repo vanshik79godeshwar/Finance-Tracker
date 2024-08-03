@@ -1,0 +1,21 @@
+import React, { useEffect, useState }from'react';
+//import AboutUs from '../../public/AboutUs.html';
+
+function App() {
+  let[htmlFileString, setHtmlFileString] = useState();
+
+  async function fetchHtml() {
+    setHtmlFileString(await (await fetch(AboutUs.htm)).text());
+  }
+  useEffect(() => {
+    fetchHtml();
+  }, []);
+
+  return(
+    <div className="App">
+      <div dangerouslySetInnerHTML={{ __html: htmlFileString }}></div>
+    </div>
+  );
+}
+
+export default App;

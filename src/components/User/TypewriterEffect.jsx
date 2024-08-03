@@ -12,9 +12,10 @@ const TypewriterEffect = () => {
         loop={0}
         cursor
         cursorStyle="|"
-        typeSpeed={50}  // Adjusted typing speed
+        typeSpeed={50}  
         deleteSpeed={30}
         delaySpeed={1500}
+
       />
     </div>
   );
