@@ -11,7 +11,7 @@ export default function Profile({ user }) {
         <Sidebar user={user} />
       </div>
       <div className="flex-1 bg-DarkGray text-White overflow-y-auto content">
-        <GroupSelecter sender={user.username} senderAvatar={user.avatar}/>
+        <GroupSelecter sender={user.username} senderAvatar={user.avatar} id={user._id}/>
       </div>
     </div>
   )

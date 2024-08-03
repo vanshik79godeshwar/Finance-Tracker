@@ -42,7 +42,7 @@ def fetch_historical_data(name):
         date = cols[0].text.strip()
         try:
             # Correct date format
-            date = datetime.datetime.strptime(date, '%m/%d/%Y')
+            date = datetime.datetime.strptime(date, '%b %d, %Y')  # Update date format here
             price = float(cols[1].text.replace(',', '').replace('₹', '').strip())
             open_ = float(cols[2].text.replace(',', '').replace('₹', '').strip())
             high = float(cols[3].text.replace(',', '').replace('₹', '').strip())
@@ -74,6 +74,7 @@ else:
 
 if not nifty_data.empty:
     nifty_data.to_csv('./Backend/Data/nifty-50.csv', index=False)
+else:
     print("Nifty data is empty")
 
 print("Sensex Data:\n", sensex_data.head())
