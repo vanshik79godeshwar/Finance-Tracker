@@ -15,10 +15,11 @@ import user6 from "../assets/profile-pictures/user6.jpg";
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "Contact us", href: "/ContactUs" },
-  { label: "About us", href: "/About" },
+  { label: "About Us", href: "/About" },
   { label: "Services", href: "Services" },
   { label: "News", href: "/News" },
   { label: "Blogs", href: "/Blogs" },
+  { label: "Career", href: "/Career" },
 ];
 
 export const testimonials = [
