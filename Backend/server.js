@@ -122,7 +122,7 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('Client disconnected');
   });
-});a
+});
 
 // Start the server
 server.listen(PORT, () => {

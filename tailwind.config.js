@@ -14,20 +14,7 @@ export default {
         Lobster: ['Lobster', 'cursive'],
       },
       colors: {
-<<<<<<< HEAD
-        primary: '#457814',
-        secondary: '#D8345F',
-        accent: '#1FB6FF',
-        A: '#133D5A',
-        B: '#09111C',
-        C: '#788E8A',
-        D: '#266076',
-        E: '#A0DEE3',
-        F: '#0F2C47',
-        G: '#ADD8E6',
-        H: '#30346D',
-        I : '#353935',
-=======
+
         primary: '#457814', // Example custom green color
         secondary: '#D8345F', // Example custom red color
         accent: '#1FB6FF', // Example custom blue color
@@ -42,7 +29,6 @@ export default {
         H: '#30346D', // Space cadet
         I: '#353935', // Olive
         // new colors
->>>>>>> bed670b27db3d07c550dee4d949e9ecddad8547d
         Black: '#1e1e1e',
         DarkGray: '#2a2a2a',
         Blue: '#007acc',
