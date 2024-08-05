@@ -7,12 +7,8 @@ const App = () => {
     <div className="contact-us-page">
       <Navbar />
       <div className="contact-wrapper mt-7">
-        
         <div className="contact-container">
-           
           <form action="#" method="POST" className="contact-form">
-            <br>
-            </br>
             <h2>CONTACT US</h2>
             <div className="contact-form-group">
               <label htmlFor="name" className="contact-form-label">Your Name:</label>
@@ -59,7 +55,7 @@ const App = () => {
             className="map-iframe"
           ></iframe>
         </div>
-        <div className="social-links">
+        <div className="social-links m-5">
           <a href="https://www.instagram.com/" className="social-icon instagram-icon"><i className="fab fa-instagram"></i></a>
           <a href="mailto:capitalcompassforyou@gmail.com" className="social-icon email-icon"><i className="fas fa-envelope"></i></a>
           <a href="https://www.linkedin.com/" className="social-icon linkedin-icon"><i className="fab fa-linkedin"></i></a>

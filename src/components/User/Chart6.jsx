@@ -1,6 +1,18 @@
 import React from 'react';
 import { Pie, Bar } from 'react-chartjs-2';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title } from 'chart.js';
 import { useGlobalContext } from '../../context/GlobalContext';
+
+// Register the necessary components with ChartJS
+ChartJS.register(
+    ArcElement,
+    Tooltip,
+    Legend,
+    CategoryScale,
+    LinearScale,
+    BarElement,
+    Title
+);
 
 function ExpenseCategoryCharts() {
     const { expenses } = useGlobalContext();
@@ -48,7 +60,7 @@ function ExpenseCategoryCharts() {
             },
             title: {
                 display: true,
-                text: 'Income by Category',
+                text: 'Expenses by Category',
                 color: '#cccccc', // Change title color here
             },
             tooltip: {
@@ -78,18 +90,17 @@ function ExpenseCategoryCharts() {
                 ticks: {
                     color: 'orange', // Change X-axis ticks color here
                 },
-                
             },
         },
     };
 
     return (
         <div className="flex flex-col md:flex-row w-full mb-7 border-2 border-orange-500 p-4 shadow-lg justify-center">
-            <div style={{height: "24rem"}} className="flex-1 w-6/12 h- text-white   p-4 rounded-lg m-2">
+            <div style={{ height: "24rem" }} className="flex-1 w-6/12 text-white p-4 rounded-lg m-2">
                 <h3 className="text-center mb-4">Expense Breakdown by Category (Pie)</h3>
                 <Pie data={expenseData} options={options} />
             </div>
-            <div className="flex-1 w-6/12 text-white  p-4 rounded-lg m-2">
+            <div className="flex-1 w-6/12 text-white p-4 rounded-lg m-2">
                 <h3 className="text-center mb-4">Expense Breakdown by Category (Bar)</h3>
                 <Bar data={barData} options={options} />
             </div>

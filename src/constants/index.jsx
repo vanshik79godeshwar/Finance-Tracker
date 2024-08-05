@@ -15,10 +15,11 @@ import user6 from "../assets/profile-pictures/user6.jpg";
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "Contact us", href: "/ContactUs" },
-  { label: "About us", href: "/About" },
+  { label: "About Us", href: "/AboutUs" },
   { label: "Services", href: "/Services" },
-  { label: "News", href: "/News" },
+  { label: "News", href: "/News" }, 
   { label: "Blogs", href: "/Blogs" },
+  { label: "Career", href: "/Career" },
 ];
 
 export const testimonials = [
@@ -44,7 +45,7 @@ export const testimonials = [
     user: "Ronee Brown",
     company: "Fusion Dynamics",
     image: user4,
-    text: "Working with the team at XYZ Company was a game-changer for our project. Their attention to detail and innovative solutions helped us achieve our goals faster than we thought possible. We are grateful for their expertise and professionalism!",
+    text: "Working with the team at Captial Compass was a game-changer for our project. Their attention to detail and innovative solutions helped us achieve our goals faster than we thought possible. We are grateful for their expertise and professionalism!",
   },
   {
     user: "Michael Wilson",
@@ -75,7 +76,7 @@ export const features = [
   },
   {
     icon: <ShieldHalf />,
-    text: "Personalized Investment Plans",
+    text: "Personalized Budget Plans",
     description:
       "Create tailored investment plans that align with your financial goals and risk tolerance, giving you a clear path to success.",
   },
@@ -101,35 +102,28 @@ export const features = [
 
 export const checklistItems = [
   {
-    title: "step 1",
+    title: "step 1: Sign Up and Set Up Your Profile",
+    description: "Visit the website and click “Sign Up” to create an account by entering your personal information and setting a secure password. "  },
+  {
+    title: "step 2: Explore the Dashboard",
+    description: 
+  "After logging in, familiarize yourself with the dashboard where you can see an overview of budget plans, stock prices, and expenses. "},
+  {
+    title: "step 3: Utilize Personal Consulting Services",
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Navigate to the Services section to schedule a meeting with a financial advisor for personalized guidance. Prepare specific questions or topics to discuss to make the most out of your consultation.",
   },
   {
-    title: "step 2",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
+    title: "step 4: Set Up and Manage Your Budget Plan",
+    description:" Go to the “Budget” section to enter your income and expenses, and create a personalized budget plan. " },
   {
-    title: "step 3",
+    title: "step 5: Track and Analyze Your Expenses",
     description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
+  "Categorize your expenses to analyze spending patterns and identify areas for potential savings."},
   {
-    title: "step 4",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "step 5",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    title: "step 6",
-    description:
-      "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
+    title: "step 6: Monitor Stock Prices and Investments",
+    description: 
+  " Visit the “ETF” section to view real-time stock prices and check your investment portfolio. " },
 ];
 
 export const pricingOptions = [

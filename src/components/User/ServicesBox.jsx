@@ -17,9 +17,10 @@ function ServicesBox() {
 
     return () => clearTimeout(timer);
   }, []);
-
+ 
+ 
   const handleRedirect = () => {
-    navigate('/http://localhost:5173/Login'); // Redirect to the "/login" path
+    navigate('./Page/Login.jsx"'); // Redirect to the "/login" path
   };
 
   return (

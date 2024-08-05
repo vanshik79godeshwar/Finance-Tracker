@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -10,7 +11,7 @@ export default {
         'circular-gradient': 'radial-gradient(circle, var(--tw-gradient-stops))',
       },
       fontFamily: {
-        Lobster: ['Lobster', 'cursive']
+        Lobster: ['Lobster', 'cursive'],
       },
       colors: {
         primary: '#457814', // Example custom green color
@@ -25,7 +26,7 @@ export default {
         F: '#0F2C47', // Prussian blue
         G: '#ADD8E6', // Light blue
         H: '#30346D', // Space cadet
-        I : '#353935', // Olive
+        I: '#353935', // Olive
         // new colors
         Black: '#1e1e1e',
         DarkGray: '#2a2a2a',
@@ -36,6 +37,37 @@ export default {
         Green: '#4caf50',
         Red: '#f44336',
       },
+      boxShadow: {
+        'floating': '0 4px 8px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 165, 0, 0.5)',
+      },
+      animation: {
+        'border-animate': 'border-animate 3s infinite',
+      },
+      keyframes: {
+        'border-animate': {
+          '0%': {
+            borderColor: 'transparent',
+            transform: 'translate(0, 0)',
+          },
+          '25%': {
+            borderColor: '#FFA500',
+            transform: 'translate(10px, -10px)',
+          },
+          '50%': {
+            borderColor: '#FFA500',
+            transform: 'translate(-10px, 10px)',
+          },
+          '75%': {
+            borderColor: '#FFA500',
+            transform: 'translate(10px, 10px)',
+          },
+          '100%': {
+            borderColor: '#FFA500',
+            transform: 'translate(0, 0)',
+          },
+        },
+      },
+      
     },
   },
   plugins: [],

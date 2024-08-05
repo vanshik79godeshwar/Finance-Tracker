@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
-import { Container, TextField, Button, Typography, Grid, Paper, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import {
+  Container,
+  TextField,
+  Button,
+  Typography,
+  Grid,
+  Paper,
+  CssBaseline,
+  ThemeProvider,
+  createTheme,
+} from '@mui/material';
 import './BudgetCalculator.css';
 
 const darkTheme = createTheme({
@@ -15,6 +25,15 @@ const darkTheme = createTheme({
     text: {
       primary: '#ffffff',
       secondary: '#b0bec5',
+    },
+  },
+  typography: {
+    fontFamily: 'Roboto, Arial, sans-serif',
+    h4: {
+      fontWeight: 600,
+    },
+    h6: {
+      fontWeight: 500,
     },
   },
 });
@@ -44,12 +63,12 @@ const BudgetCalculator = () => {
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <Container maxWidth="sm" className="budget-calculator">
-        <Paper elevation={3} className="budget-calculator-container">
-          <Typography variant="h4" gutterBottom className="budget-typography-heading">
+        <Paper elevation={6} className="calculator-container p-6 rounded-lg bg-transparent shadow-xl">
+          <Typography variant="h4" gutterBottom className="text-center text-white">
             Budget Calculator
           </Typography>
-          <Grid container spacing={2}>
-            <Grid item xs={12} className="budget-grid-item">
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
               <TextField
                 label="Monthly Salary"
                 type="number"
@@ -57,6 +76,8 @@ const BudgetCalculator = () => {
                 variant="outlined"
                 value={income}
                 onChange={handleIncomeChange}
+                InputLabelProps={{ className: 'text-gray-400' }}
+                InputProps={{ className: 'text-white' }}
               />
             </Grid>
             <Grid item xs={12} className="budget-grid-item">
@@ -67,6 +88,8 @@ const BudgetCalculator = () => {
                 variant="outlined"
                 value={rent}
                 onChange={handleRentChange}
+                InputLabelProps={{ className: 'text-gray-400' }}
+                InputProps={{ className: 'text-white' }}
               />
             </Grid>
             <Grid item xs={12} className="budget-grid-item">
@@ -77,6 +100,8 @@ const BudgetCalculator = () => {
                 variant="outlined"
                 value={emi}
                 onChange={handleEmiChange}
+                InputLabelProps={{ className: 'text-gray-400' }}
+                InputProps={{ className: 'text-white' }}
               />
             </Grid>
             <Grid item xs={12} className="budget-grid-item">
@@ -86,22 +111,23 @@ const BudgetCalculator = () => {
                 fullWidth
                 className="budget-button"
                 onClick={() => console.log('Calculate EMI button clicked!')}
+                className="bg-blue-500 hover:bg-blue-700"
               >
-                Calculate EMI
+                Calculate
               </Button>
             </Grid>
           </Grid>
-          <div className="budget-values">
-            <Typography variant="h6" className="budget-typography-value">
+          <div className="values mt-6 p-4 rounded-lg bg-gray-800 shadow-md">
+            <Typography variant="h6" className="text-blue-400">
               Savings: {savings.toFixed(2)}
             </Typography>
-            <Typography variant="h6" className="budget-typography-value">
+            <Typography variant="h6" className="text-blue-500">
               Groceries: {groceries.toFixed(2)}
             </Typography>
-            <Typography variant="h6" className="budget-typography-value">
+            <Typography variant="h6" className="text-blue-600">
               Utilities: {utilities.toFixed(2)}
             </Typography>
-            <Typography variant="h6" className="budget-typography-value">
+            <Typography variant="h6" className="text-blue-700">
               Personal Expenses: {personalExpenses.toFixed(2)}
             </Typography>
           </div>

@@ -1,118 +1,76 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { useNavigate } from 'react-router-dom'; // Updated to useNavigate
 import Sidebar from '../components/User/Sidebar';
-import './Help.css'; // Ensure your CSS file is imported
+import './Help.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 export default function Help({ user }) {
   const [activeIndex, setActiveIndex] = useState(null);
+  const navigate = useNavigate(); // Updated to useNavigate
 
   const articles = [
-    {
-      title: "How do I get real-time stock updates?",
-      content: "You can get real-time stock updates by subscribing to our stock update service. We provide live data and notifications for major stock exchanges."
-    },
-    {
-      title: "Where can I find the latest financial news?",
-      content: "Our website has a dedicated News section where you can find the latest financial news and market trends. Stay updated with the most recent articles and reports."
-    },
-    {
-      title: "How can I read and follow your financial blogs?",
-      content: "Visit our Blogs section to read articles on various financial topics. You can follow our blogs for insights, tips, and updates related to personal finance and investing."
-    },
-    {
-      title: "How do I use the finance management tools?",
-      content: "Our finance management tools can be accessed through the Finance section of our website. You can track your expenses, set savings goals, and manage your overall financial health."
-    },
-    {
-      title: "How do I calculate my EMI?",
-      content: "Use our EMI calculator tool available in the EMI section. Simply input the loan amount, interest rate, and tenure to get your estimated monthly EMI."
-    },
-    {
-      title: "How can I create and manage my monthly budget?",
-      content: "Our Monthly Budget tool helps you set and manage your budget. Enter your income and expenses to create a budget plan and track your spending."
-    },
-    {
-      title: "What features are included in the stock tracking?",
-      content: "Our stock tracking feature includes real-time price updates, historical data, performance charts, and alerts for price changes and market news."
-    },
-    {
-      title: "Can I customize the financial news I receive?",
-      content: "Yes, you can customize your news feed by selecting topics and categories that interest you. Manage your preferences in the News section of your account settings."
-    },
-    {
-      title: "Are there any guides or tutorials for using the finance tools?",
-      content: "Yes, we provide detailed guides and tutorials for all our finance tools. Visit the Help section to access user manuals and video tutorials."
-    },
-    {
-      title: "How secure is my financial data on your website?",
-      content: "We take data security very seriously. Our website uses advanced encryption and security protocols to protect your financial information from unauthorized access."
-    },
-    {
-      title: "Can I access the tools on my mobile device?",
-      content: "Yes, our website is optimized for mobile devices. You can access all our finance tools and features from your smartphone or tablet."
-    },
-    {
-      title: "How do I reset my password?",
-      content: "If you need to reset your password, go to the login page and click on 'Forgot Password.' Follow the instructions to reset your password via email."
-    },
-    {
-      title: "Who can I contact for support?",
-      content: "For support, you can contact our customer service team through the Contact Us page. We offer support via email, phone, and live chat."
-    },
-    {
-      title: "Do you offer any financial planning services?",
-      content: "Yes, we offer financial planning services through our partners. You can find more information and schedule a consultation in the Financial Planning section."
-    },
-    {
-      title: "Can I track my investments and portfolio?",
-      content: "Yes, our investment tracking feature allows you to monitor your portfolio's performance, view historical data, and receive insights on your investments."
-    }
+    "How to track income and expenses",
+    "Analyzing your financial dashboard",
+    "Setting up your profile",
+    "ETF section overview",
+    "Using the budget EMI calculator",
+    "Currency exchange features",
+    "Engaging in the community section",
+    "Founder: Vanshik Godeshwar's story",
+    "Understanding the analysis tools",
+    "Security features of Capital Compass",
+    "Managing notifications and alerts",
+    "Getting help and support",
+    "Updating your account information",
+    "Using the mobile app",
+    "Integrating with other financial tools",
+    "Understanding the analytics dashboard",
+    "Setting financial goals"
   ];
 
   const handleToggle = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
+  const navigateToContactUs = () => {
+    navigate('/ContactUs'); // Updated to navigate
+  };
+
   return (
-    <div className="flex">
-      <Sidebar user={user} />
-      <div className="flex-1 bg-black">
+    <div className="flex h-screen">
+      <div className='overflow-y-auto sidebar'>
+        <Sidebar user={user} />
+      </div>
+      <div className="flex-1 bg-darkGray text-white overflow-y-auto content">
         <div className="help-page">
           <div className="body-content">
             <div className="intro">
               <h1>Hello, how can we help?</h1>
             </div>
             <div className="search-box">
-              <p>
-                FAQs, quick fixes, and official info on every Dropbox feature. Just a click away.
-              </p>
+              <p>FAQs, quick fixes, and official info on every Capital Compass feature. Just a click away.</p>
             </div>
           </div>
           <div className="featured-articles">
-            <h2>Commonly Asked Questions</h2>
-            <div className="cards">
+            <h1>Commonly asked questions</h1>
+            <div className="accordion">
               {articles.map((article, index) => (
-                <div
-                  key={index}
-                  className={`card ${article.colorClass} ${activeIndex === index ? 'card-expanded' : ''}`}
-                  onClick={() => handleToggle(index)}
-                >
-                  <p className="tip">{article.title}</p>
-                  {activeIndex === index && (
-                    <p className="second-text">{article.content}</p>
-                  )}
+                <div key={index} className={`accordion-item ${activeIndex === index ? 'active' : ''}`}>
+                  <div className="accordion-title" onClick={() => handleToggle(index)}>
+                    {article} <FontAwesomeIcon icon={activeIndex === index ? faChevronUp : faChevronDown} className="arrow" />
+                  </div>
+                  <div className={`accordion-content ${activeIndex === index ? 'open' : ''}`}>
+                    <p>This is the content for {article}. Capital Compass is your all-in-one financial tool for tracking income, managing expenses, analyzing your financial dashboard, and more.</p>
+                  </div>
                 </div>
               ))}
-              <br>
-              </br>
-
-              <p st>Still have questions for us?</p>
-              <div className="flex justify-center">
-                <Link to="/ContactUs" className="contact-link">
-                  Contact Us
-                </Link>
-              </div>
             </div>
+          </div>
+          <div className="contact-us-button-container">
+            <button className="bg-gradient-to-r from-F to-D p-2 rounded-md" onClick={navigateToContactUs}>
+              Contact Us
+            </button>
           </div>
         </div>
       </div>
