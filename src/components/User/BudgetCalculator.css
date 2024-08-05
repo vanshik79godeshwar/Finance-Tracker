@@ -1,0 +1,47 @@
+/* General container styling for the budget calculator */
+.budget-calculator {
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Styling for the Paper component containing the calculator */
+  .budget-calculator-container {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #000; /* Black background */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6); /* White shadow */
+    color: #fff; /* Ensure text color is white for contrast */
+  }
+  
+  /* Typography styling for headings */
+  .budget-typography-heading {
+    margin-bottom: 20px;
+  }
+  
+  /* Grid item spacing */
+  .budget-grid-item {
+    margin-bottom: 16px;
+  }
+  
+  /* Button styling */
+  .budget-button {
+    margin-top: 20px;
+  }
+  
+  /* Styling for the values section */
+  .budget-values {
+    margin-top: 20px;
+  }
+  
+  /* Typography styling for values */
+  .budget-typography-value {
+    margin-bottom: 10px;
+  }
+  
+  /* Pie chart container styling */
+  .budget-chart-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  

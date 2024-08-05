@@ -80,7 +80,7 @@ const BudgetCalculator = () => {
                 InputProps={{ className: 'text-white' }}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className="budget-grid-item">
               <TextField
                 label="Rent"
                 type="number"
@@ -92,7 +92,7 @@ const BudgetCalculator = () => {
                 InputProps={{ className: 'text-white' }}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className="budget-grid-item">
               <TextField
                 label="EMI"
                 type="number"
@@ -104,11 +104,12 @@ const BudgetCalculator = () => {
                 InputProps={{ className: 'text-white' }}
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} className="budget-grid-item">
               <Button
                 variant="contained"
                 color="primary"
                 fullWidth
+                className="budget-button"
                 onClick={() => console.log('Calculate EMI button clicked!')}
                 className="bg-blue-500 hover:bg-blue-700"
               >
@@ -117,16 +118,16 @@ const BudgetCalculator = () => {
             </Grid>
           </Grid>
           <div className="values mt-6 p-4 rounded-lg bg-gray-800 shadow-md">
-            <Typography variant="h6" className="text-green-400">
+            <Typography variant="h6" className="text-blue-400">
               Savings: {savings.toFixed(2)}
             </Typography>
-            <Typography variant="h6" className="text-yellow-400">
+            <Typography variant="h6" className="text-blue-500">
               Groceries: {groceries.toFixed(2)}
             </Typography>
-            <Typography variant="h6" className="text-purple-400">
+            <Typography variant="h6" className="text-blue-600">
               Utilities: {utilities.toFixed(2)}
             </Typography>
-            <Typography variant="h6" className="text-red-400">
+            <Typography variant="h6" className="text-blue-700">
               Personal Expenses: {personalExpenses.toFixed(2)}
             </Typography>
           </div>

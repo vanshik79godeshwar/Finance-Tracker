@@ -53,7 +53,7 @@ export default function Help({ user }) {
             </div>
           </div>
           <div className="featured-articles">
-            <h2>Commonly asked questions</h2>
+            <h1>Commonly asked questions</h1>
             <div className="accordion">
               {articles.map((article, index) => (
                 <div key={index} className={`accordion-item ${activeIndex === index ? 'active' : ''}`}>
@@ -68,7 +68,7 @@ export default function Help({ user }) {
             </div>
           </div>
           <div className="contact-us-button-container">
-            <button className="contact-us-button" onClick={navigateToContactUs}>
+            <button className="bg-gradient-to-r from-F to-D p-2 rounded-md" onClick={navigateToContactUs}>
               Contact Us
             </button>
           </div>

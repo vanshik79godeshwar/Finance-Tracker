@@ -8,12 +8,9 @@ import PrivateRoute from './PrivateRoute.jsx';
 import Test from './Page/Test.jsx';
 import Career from './Page/Career.jsx'
 import ContactUs from './Page/ContactUs.jsx';
-<<<<<<< HEAD
-import CareerOpenings from './Page/Career.jsx';
-=======
-import AboutUs from './Page/AboutUs.jsx';
-
->>>>>>> bed670b27db3d07c550dee4d949e9ecddad8547d
+//import CareerOpenings from './Page/Career.jsx';
+ import AboutUs from './Page/AboutUs.jsx';
+import Services from './Page/Services.jsx';
 
 function App() {
   return (
@@ -25,8 +22,8 @@ function App() {
         <Route path="/Blogs" element={<Test />} />
         <Route path="/Career" element={<Career />} />
        <Route path="/ContactUs" element={<ContactUs />} />
-       
-        
+       <Route path ="/AboutUs" element ={<AboutUs />} />
+        <Route path ="/Services" element={<Services />} />
         <Route
           path="/:username/*"
           element={<PrivateRoute element={<User />} />}
