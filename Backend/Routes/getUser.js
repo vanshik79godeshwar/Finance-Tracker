@@ -9,8 +9,12 @@ router.use(cors());
 
 // Route to get a specific user by username based on JWT
 router.get('/get-user/:username', authMiddleware, async (req, res) => {
+  console.log("hi");
   try {
-    const user = await User.findOne({ username: req.params.username }).select('-password'); // Exclude password
+    console.log("hello");
+    const user = await User.findOne({ username: req.params.username }).select('-password');
+    console.log(user)
+    // Exclude password
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }

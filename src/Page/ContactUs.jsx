@@ -34,11 +34,11 @@ const App = () => {
           </form>
           <div className="contact-info flex justify-center flex-col items-center mt-4">
             <h3 className="contact-info-heading">Our Address</h3>
-            <p className="contact-info-text">Capital Compass, 123 Finance St, Money City, 56789</p>
-            <h3 className="contact-info-heading">Email Us</h3>
+            <p className="contact-info-text">Capital Compass Office, DoCSE, SVNIT Surat - 395007, Gujarat</p>
+            <h3 className="contact-info-heading">Email Us:</h3>
             <p className="contact-info-text">capitalcompassforyou@gmail.com</p>
             <h3 className="contact-info-heading">Call Us</h3>
-            <p className="contact-info-text">+1 (234) 567-890</p>
+            <p className="contact-info-text">+91 8511095153</p>
           </div>
         </div>
         <div className="map-container">
@@ -56,10 +56,10 @@ const App = () => {
           ></iframe>
         </div>
         <div className="social-links m-5">
-          <a href="https://www.instagram.com/" className="social-icon instagram-icon"><i className="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/capitalcompass4u/" target='blank' className="social-icon instagram-icon"><i className="fab fa-instagram"></i></a>
           <a href="mailto:capitalcompassforyou@gmail.com" className="social-icon email-icon"><i className="fas fa-envelope"></i></a>
           <a href="https://www.linkedin.com/" className="social-icon linkedin-icon"><i className="fab fa-linkedin"></i></a>
-          <a href="https://www.facebook.com/" className="social-icon facebook-icon"><i className="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/capitalcompass4" target='blank' className="social-icon facebook-icon"><i className="fab fa-twitter"></i></a>
         </div>
       </div>
     </div>
