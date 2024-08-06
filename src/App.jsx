@@ -10,6 +10,8 @@ import Career from './Page/Career.jsx'
 import ContactUs from './Page/ContactUs.jsx';
 import CareerOpenings from './Page/Career.jsx';
 import AboutUS from './Page/AboutUs.jsx';
+import Service from './Page/Services.jsx'
+import Pricing from './Page/PricingOptions.jsx'
 
 function App() {
   return (
@@ -20,6 +22,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/Blogs" element={<Test />} />
         <Route path="/Career" element={<Career />} />
+        <Route path="/About" element={<AboutUS />} />
+        <Route path="/Services" element={<Service />} />
+        <Route path="/pricing" element={<Pricing />} />
        <Route path="/ContactUs" element={<ContactUs />} />
         <Route
           path="/:username/*"
