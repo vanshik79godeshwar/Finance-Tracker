@@ -12,7 +12,7 @@ export default function Help({ user }) {
       </div>
       <div className="flex-1 bg-DarkGray text-White overflow-y-auto content">
         <div className="flex-1 p-8 overflow-y-auto">
-          <div className="bg-zinc-800 border-2 border-orange-500 p-6 rounded-lg shadow-lg animation-border-animate">
+          <div className="bg-zinc-800 border-2 border-blue-900 p-6 rounded-lg shadow-lg animation-border-animate">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="p-4">
                 <PieChart />

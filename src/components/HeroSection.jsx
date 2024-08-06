@@ -1,3 +1,7 @@
+
+ 
+
+
 import video1 from "../assets/video1.mp4";
 import video2 from "../assets/video3.mp4";
 
@@ -10,17 +14,20 @@ const HeroSection = () => {
           {" "}
           Your Path to Prosperity
         </span>
-      </h1>
+      </h1>  
       <p className="mt-10 text-lg text-center text-neutral-500 max-w-4xl">
         Unlock new financial opportunities with CapitalCompass. Our innovative solutions and expert guidance are designed to help you navigate the markets and grow your wealth. Get started today and build a brighter financial future!
       </p>
       <div className="flex justify-center my-10">
         <a
-          href="#"
+          href="./Page/Login.jsx"
           className="bg-gradient-to-r from-D to-F py-3 px-4 mx-3 rounded-md hover:from-F hover:to-A"
         >
           Start for free
         </a>
+
+        {/* DOCUMENTATION KO REDIRECT KARNA PADEGA */}
+
         <a href="#" className="py-3 px-4 mx-3 rounded-md border hover:bg-gradient-to-tl from-F to-E">
           Documentation
         </a>
