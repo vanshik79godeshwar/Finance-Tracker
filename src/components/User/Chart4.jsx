@@ -6,6 +6,11 @@ import { dateFormat } from '../../utils/dateFormat';
 
 ChartJs.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement);
 
+function parseDate(dateStr) {
+    const [day, month, year] = dateStr.split('/').map(Number);
+    return new Date(year, month - 1, day);
+}
+
 function movingAverage(data, windowSize) {
     let result = [];
     for (let i = 0; i < data.length; i++) {
@@ -33,7 +38,8 @@ function TrendAnalysis() {
         combinedData[date].expense += expense.amount;
     });
 
-    const sortedDates = Object.keys(combinedData).sort((a, b) => new Date(a) - new Date(b));
+    // Sort the dates correctly
+    const sortedDates = Object.keys(combinedData).sort((a, b) => parseDate(a) - parseDate(b));
     const incomeData = sortedDates.map(date => combinedData[date].income);
     const expenseData = sortedDates.map(date => combinedData[date].expense);
 
@@ -140,7 +146,7 @@ function TrendAnalysis() {
     };
 
     return (
-        <div className=" shadow-2xl p-4 rounded-lg">
+        <div className="shadow-2xl p-4 rounded-lg">
             <Line data={data} options={options} />
         </div>
     );

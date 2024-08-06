@@ -10,8 +10,7 @@ import Career from './Page/Career.jsx'
 import ContactUs from './Page/ContactUs.jsx';
 import CareerOpenings from './Page/Career.jsx';
 import AboutUs from './Page/AboutUs.jsx';
-
-
+import Services from './Page/Services.jsx';
 
 function App() {
   return (
@@ -23,8 +22,8 @@ function App() {
         <Route path="/Blogs" element={<Test />} />
         <Route path="/Career" element={<Career />} />
        <Route path="/ContactUs" element={<ContactUs />} />
-       
-        
+       <Route path ="/AboutUs" element ={<AboutUs />} />
+        <Route path ="/Services" element={<Services />} />
         <Route
           path="/:username/*"
           element={<PrivateRoute element={<User />} />}

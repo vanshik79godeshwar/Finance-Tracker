@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import Navbar from '../components/Navbar';
 
 const CareerOpenings = () => {
@@ -10,29 +10,15 @@ const CareerOpenings = () => {
     const [currentJobId, setCurrentJobId] = useState('');
     const [formData, setFormData] = useState({ name: '', email: '', resume: '' });
     const [suggestions, setSuggestions] = useState([]);
+
     const jobSuggestions = [
-        'Interface Management Engineer',
-        'Marketing Specialist',
-        'Senior Accountant',
-        'Accounts Receivable Specialist',
-        'Finance Manager',
-        'Senior Financial Analyst',
-        'Investment Analyst',
-        'Wealth Manager',
-        'Risk Manager',
-        'Credit Risk Analyst',
-        'Compliance Manager',
-        'Legal Counsel',
-        'HR Manager',
-        'Recruitment Specialist',
-        'IT Manager',
-        'Cybersecurity Analyst',
-        'Marketing Manager',
-        'Communications Manager',
-        'Client Relationship Manager',
-        'Customer Support Specialist',
-        'Operations Manager',
-        'Business Operations Analyst'
+        'Interface Management Engineer', 'Marketing Specialist', 'Senior Accountant', 
+        'Accounts Receivable Specialist', 'Finance Manager', 'Senior Financial Analyst', 
+        'Investment Analyst', 'Wealth Manager', 'Risk Manager', 'Credit Risk Analyst', 
+        'Compliance Manager', 'Legal Counsel', 'HR Manager', 'Recruitment Specialist', 
+        'IT Manager', 'Cybersecurity Analyst', 'Marketing Manager', 
+        'Communications Manager', 'Client Relationship Manager', 'Customer Support Specialist', 
+        'Operations Manager', 'Business Operations Analyst'
     ];
 
     useEffect(() => {
@@ -41,12 +27,14 @@ const CareerOpenings = () => {
 
     const fetchJobs = async (keyword = '', department = '') => {
         try {
-            const response = await fetch(`/api/jobs?keyword=${keyword}&department=${department}`);
-            if (!response.ok) {
-                throw new Error('Failed to fetch jobs');
-            }
-            const jobs = await response.json();
-            setJobs(jobs);
+            const response = await axios.get('http://localhost:5000/api/jobs', {
+                params: {
+                    keyword,
+                    department,
+                },
+            });
+            console.log('Jobs fetched successfully:', response.data);
+            setJobs(response.data);
         } catch (error) {
             console.error('Error fetching jobs:', error);
         }
@@ -64,20 +52,20 @@ const CareerOpenings = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('/api/apply', {
-                method: 'POST',
+            const response = await axios.post('http://localhost:5000/api/apply', {
+                ...formData,
+                jobId: currentJobId,
+            }, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ ...formData, jobId: currentJobId }),
             });
-            if (response.ok) {
+            if (response.status === 200) {
                 alert('Application submitted successfully!');
                 setShowModal(false);
                 setFormData({ name: '', email: '', resume: '' });
             } else {
-                const errorData = await response.json();
-                alert(`Failed to submit application: ${errorData.error}`);
+                alert(`Failed to submit application: ${response.data.error}`);
             }
         } catch (error) {
             console.error('Error submitting application:', error);
@@ -93,7 +81,7 @@ const CareerOpenings = () => {
         const query = e.target.value.toLowerCase();
         setKeyword(query);
         if (query) {
-            const filteredSuggestions = jobSuggestions.filter(item =>
+            const filteredSuggestions = jobSuggestions.filter((item) =>
                 item.toLowerCase().includes(query)
             );
             setSuggestions(filteredSuggestions);
@@ -202,7 +190,7 @@ const CareerOpenings = () => {
                                         value={formData.name}
                                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                         required
-                                        className="block w-full mt-1 p-2 rounded-md text-gray-800"
+                                        className="block w-full p-2 border rounded-md"
                                     />
                                 </label>
                                 <label className="block mb-2">
@@ -214,7 +202,7 @@ const CareerOpenings = () => {
                                         value={formData.email}
                                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                         required
-                                        className="block w-full mt-1 p-2 rounded-md text-gray-800"
+                                        className="block w-full p-2 border rounded-md"
                                     />
                                 </label>
                                 <label className="block mb-2">
@@ -226,14 +214,14 @@ const CareerOpenings = () => {
                                         value={formData.resume}
                                         onChange={(e) => setFormData({ ...formData, resume: e.target.value })}
                                         required
-                                        className="block w-full mt-1 p-2 rounded-md text-gray-800"
+                                        className="block w-full p-2 border rounded-md"
                                     />
                                 </label>
                                 <button
                                     type="submit"
                                     className="bg-cyan-800 text-white px-4 py-2 rounded-md transition duration-300 hover:bg-sky-900"
                                 >
-                                    Submit
+                                    Submit Application
                                 </button>
                             </form>
                         </div>
@@ -241,10 +229,7 @@ const CareerOpenings = () => {
                 )}
             </div>
         </>
-
     );
 };
 
 export default CareerOpenings;
-
-

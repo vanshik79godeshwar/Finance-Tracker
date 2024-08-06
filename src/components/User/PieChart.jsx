@@ -11,7 +11,7 @@ const PieChart = () => {
       {
         label: 'Budget Allocation',
         data: [20, 20, 30, 30],
-        backgroundColor: ['#FFD54F', '#FFB74D', '#FFA726', '#FB8C00'], // Yellow and orange shades
+        backgroundColor: ['#788E8A', '#A0DEE3', '#266076', '#09111C'],
         borderColor: '#333',
         borderWidth: 1,
       },
@@ -52,6 +52,10 @@ const PieChart = () => {
         borderWidth: 2,
         borderColor: '#121212',
       },
+    },
+    animation: {
+      duration: 3000, // Duration of the animation in milliseconds
+       
     },
   };
 
