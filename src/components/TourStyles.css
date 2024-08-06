@@ -1,0 +1,47 @@
+/* src/TourStyles.css */
+.react-joyride__tooltip {
+    background-color: #333; /* Dark background for the tooltip */
+    color: white; /* White text */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9); /* Soft shadow */
+  }
+  
+  .react-joyride__tooltip--title {
+    font-size: 1.25rem; /* Larger title font size */
+    font-weight: bold;
+    margin-bottom: 10px; /* Space below title */
+  }
+  
+  .react-joyride__tooltip--content {
+    font-size: 1rem; /* Content font size */
+  }
+  
+  .react-joyride__tooltip--footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .react-joyride__button {
+    background-color: #000000; /* Blue button background */
+    color: white; /* White text */
+    border: none;
+    padding: 0.5rem 1rem; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .react-joyride__button:hover {
+    background-color: #00000069; /* Darker blue on hover */
+  }
+  /* src/TourStyles.css */
+
+.react-joyride__overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Darken the background more */
+    /* Or you can use a specific color, e.g., rgba(255, 0, 0, 0.5) for a red tint */
+  }
+  
+  .react-joyride__overlay--custom {
+    background-color: rgba(0, 123, 255, 0.5); /* Example: a semi-transparent blue */
+  }
+  
