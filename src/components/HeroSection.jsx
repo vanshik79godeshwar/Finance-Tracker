@@ -1,7 +1,3 @@
-
- 
-
-
 import video1 from "../assets/video1.mp4";
 import video2 from "../assets/video3.mp4";
 
@@ -9,10 +5,10 @@ const HeroSection = () => {
   return (
     <div className="flex flex-col items-center mt-6 lg:mt-20 ">
       <h1 className="text-4xl sm:text-6xl lg:text-7xl text-center tracking-wide">
-        CapitalCompass Charting
+        CapitalCompass 
         <span className="bg-gradient-to-r from-D to-A text-transparent bg-clip-text">
           {" "}
-          Your Path to Prosperity
+          Charting Your Path to Prosperity
         </span>
       </h1>  
       <p className="mt-10 text-lg text-center text-neutral-500 max-w-4xl">

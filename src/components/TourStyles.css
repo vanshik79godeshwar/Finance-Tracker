@@ -1,0 +1,59 @@
+/* src/TourStyles.css */
+
+/* Tooltip styles */
+.react-joyride__tooltip {
+  background-color: #333; /* Dark background for the tooltip */
+  color: white; /* White text */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9); /* Soft shadow */
+}
+
+.react-joyride__tooltip--title {
+  font-size: 1.25rem; /* Larger title font size */
+  font-weight: bold;
+  margin-bottom: 10px; /* Space below title */
+}
+
+.react-joyride__tooltip--content {
+  font-size: 1rem; /* Content font size */
+}
+
+.react-joyride__tooltip--footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.react-joyride__button {
+  background-color: #000000; /* Black button background */
+  color: white; /* White text */
+  border: none;
+  padding: 0.5rem 1rem; /* Padding */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; 
+  /* transition: background-color 0.3s ease; */
+}
+
+.react-joyride__button:hover {
+  background-color: #00000069; /* Lighter black on hover */
+}
+
+/* Overlay styles */
+.react-joyride__overlay {
+  background-color: transparent !important; /* Ensure transparency */
+}
+
+/* Spotlight styles */
+.react-joyride__spotlight {
+  border: 3px solid #212d3a96; /* Blue border around the highlighted element */
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5); /* Darken the rest of the screen */
+  border-radius: 8px; /* Optional: rounded corners */
+  color: #000000;
+  background-color: #000000;
+  transition: box-shadow 0.3s ease, border 0.3s ease; /* Smooth transition */
+}
+
+/* Optional custom spotlight styles */ 
+.react-joyride__spotlight--custom {
+  border: 3px solid #522d2d; /* Custom border color, e.g., red */
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5); /* Darken the rest of the screen */
+}

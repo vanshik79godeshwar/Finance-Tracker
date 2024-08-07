@@ -15,7 +15,7 @@ api.interceptors.request.use(
         if (token) {
             config.headers['x-auth-token'] = token;
         }
-        return config;
+        return config; 
     },
     (error) => {
         return Promise.reject(error);
