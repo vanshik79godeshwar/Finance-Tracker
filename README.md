@@ -13,7 +13,7 @@ The Capital Compass Finance Tracker is a comprehensive website tool designed to 
 - **Web Scraping**: beautifulSoup, pandas
 - **Sockets**: Socket.io
 - **Styling**: Tailwind CSS
-- **Deployment**: Vercel + Render
+
 
 ## Directory Structure
 
