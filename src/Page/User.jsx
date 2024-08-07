@@ -3,7 +3,7 @@ import api from '../utils/api';
 import { Routes, Route, useParams, Outlet, useNavigate } from 'react-router-dom';
 import Profile from './Profile';
 import Help from './Help';
-import Settings from './Settings';
+// import Settings from './Settings';
 import Dashboard from './Dashboard';
 import Gold from './Gold';
 import Budget from './Budget';
@@ -82,7 +82,7 @@ const User = () => {
       <Routes>
         <Route path="/" element={<Outlet />}>
           <Route path="profile" element={<Profile user={userData} />} />
-          <Route path="settings" element={<Settings user={userData} />} />
+          {/* <Route path="settings" element={<Settings user={userData} />} /> */}
           <Route path="help" element={<Help user={userData} />} />
           <Route path="dashboard" element={<Dashboard user={userData} />} />
           <Route path="gold" element={<Gold user={userData} />} />

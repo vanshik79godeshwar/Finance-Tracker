@@ -1,44 +1,113 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../components/User/AnimatedIcon.css';
 import Navbar from '../components/Navbar';
+import api from '../utils/api'
 
 const App = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    comments: ''
+  });
+  const [alertMessage, setAlertMessage] = useState('');
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await api.post('/api/contact', formData);
+      setAlertMessage('Contact message submitted successfully!');
+      setShowAlert(true);
+    } catch (error) {
+      setAlertMessage('There was an error submitting the contact message!');
+      setShowAlert(true);
+    }
+  };
+
   return (
     <div className="contact-us-page">
       <Navbar />
+      {showAlert && <div className="alert-box">{alertMessage}</div>}
       <div className="contact-wrapper mt-7">
         <div className="contact-container">
-          <form action="#" method="POST" className="contact-form">
+          <form onSubmit={handleSubmit} className="contact-form">
             <h2>CONTACT US</h2>
             <div className="contact-form-group">
               <label htmlFor="name" className="contact-form-label">Your Name:</label>
-              <input type="text" id="name" name="name" className="contact-form-input" required />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                className="contact-form-input"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
             </div>
             <div className="contact-form-group">
               <label htmlFor="email" className="contact-form-label">Your Email:</label>
-              <input type="email" id="email" name="email" className="contact-form-input" required />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className="contact-form-input"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
             </div>
             <div className="contact-form-group">
               <label htmlFor="phone" className="contact-form-label">Your Phone Number:</label>
-              <input type="tel" id="phone" name="phone" className="contact-form-input" required />
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                className="contact-form-input"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+              />
             </div>
             <div className="contact-form-group">
               <label htmlFor="subject" className="contact-form-label">Subject:</label>
-              <input type="text" id="subject" name="subject" className="contact-form-input" required />
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                className="contact-form-input"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+              />
             </div>
             <div className="contact-form-group">
               <label htmlFor="comments" className="contact-form-label">Message:</label>
-              <textarea id="comments" name="comments" className="contact-form-textarea" rows="4" required></textarea>
+              <textarea
+                id="comments"
+                name="comments"
+                className="contact-form-textarea"
+                rows="4"
+                value={formData.comments}
+                onChange={handleChange}
+                required
+              ></textarea>
             </div>
             <button type="submit" className="contact-form-submit">Submit</button>
           </form>
           <div className="contact-info flex justify-center flex-col items-center mt-4">
             <h3 className="contact-info-heading">Our Address</h3>
-            <p className="contact-info-text">Capital Compass, 123 Finance St, Money City, 56789</p>
-            <h3 className="contact-info-heading">Email Us</h3>
+            <p className="contact-info-text">Capital Compass Office, DoCSE, SVNIT Surat - 395007, Gujarat</p>
+            <h3 className="contact-info-heading">Email Us:</h3>
             <p className="contact-info-text">capitalcompassforyou@gmail.com</p>
             <h3 className="contact-info-heading">Call Us</h3>
-            <p className="contact-info-text">+1 (234) 567-890</p>
+            <p className="contact-info-text">+91 8511095153</p>
           </div>
         </div>
         <div className="map-container">
@@ -56,10 +125,10 @@ const App = () => {
           ></iframe>
         </div>
         <div className="social-links m-5">
-          <a href="https://www.instagram.com/" className="social-icon instagram-icon"><i className="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/capitalcompass4u/" target='blank' className="social-icon instagram-icon"><i className="fab fa-instagram"></i></a>
           <a href="mailto:capitalcompassforyou@gmail.com" className="social-icon email-icon"><i className="fas fa-envelope"></i></a>
           <a href="https://www.linkedin.com/" className="social-icon linkedin-icon"><i className="fab fa-linkedin"></i></a>
-          <a href="https://www.facebook.com/" className="social-icon facebook-icon"><i className="fab fa-facebook-f"></i></a>
+          <a href="https://x.com/capitalcompass4" target='blank' className="social-icon facebook-icon"><i className="fab fa-twitter"></i></a>
         </div>
       </div>
     </div>

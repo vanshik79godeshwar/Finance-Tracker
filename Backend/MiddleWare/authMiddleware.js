@@ -5,10 +5,11 @@ module.exports = (req, res, next) => {
   if (!token) {
     return res.status(401).json({ message: 'No token, authorization denied' });
   }
-
+  console.log("hi");
   try {
+    console.log("hello");
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = { id: decoded.userId }; // Ensure this matches how you're accessing userId in routes
+    req.user = { id: decoded.userId }; 
     console.log('decoded', req.user);
     next();
   } catch (err) {
