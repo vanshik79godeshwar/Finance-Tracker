@@ -9,25 +9,10 @@
   color-scheme: dark;
 }
 
-
-.edu-au-vic-wa-nt-hand-Vanshik {
-  font-family: "Edu AU VIC WA NT Hand", cursive;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-}
-
-
 .lobster-regular {
   font-family: "Lobster", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
-
-
-.bg-circular-gradient {
-  --tw-gradient-from: theme('colors.I');
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, theme('colors.black'));
 }
 
 /* Custom scrollbar styles */
