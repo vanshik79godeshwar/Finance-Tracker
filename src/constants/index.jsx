@@ -16,7 +16,7 @@ export const navItems = [
   { label: "Home", href: "/" },
   { label: "Contact us", href: "/ContactUs" },
   { label: "About Us", href: "/About" },
-  { label: "Services", href: "Services" },
+  { label: "Services", href: "/Service" },
   { label: "News", href: "/News" },
   // { label: "Blogs", href: "/Blogs" },
   { label: "Career", href: "/Career" },
@@ -102,26 +102,26 @@ export const features = [
 
 export const checklistItems = [
   {
-    title: "step 1: Sign Up and Set Up Your Profile",
+    title: "Step 1: Sign Up and Set Up Your Profile",
     description: "Visit the website and click “Sign Up” to create an account by entering your personal information and setting a secure password. "  },
   {
-    title: "step 2: Explore the Dashboard",
+    title: "Step 2: Explore the Dashboard",
     description: 
   "After logging in, familiarize yourself with the dashboard where you can see an overview of budget plans, stock prices, and expenses. "},
   {
-    title: "step 3: Utilize Personal Consulting Services",
+    title: "Step 3: Utilize Personal Consulting Services",
     description:
       "Navigate to the Services section to schedule a meeting with a financial advisor for personalized guidance. Prepare specific questions or topics to discuss to make the most out of your consultation.",
   },
   {
-    title: "step 4: Set Up and Manage Your Budget Plan",
+    title: "Step 4: Set Up and Manage Your Budget Plan",
     description:" Go to the “Budget” section to enter your income and expenses, and create a personalized budget plan. " },
   {
-    title: "step 5: Track and Analyze Your Expenses",
+    title: "Step 5: Track and Analyze Your Expenses",
     description:
   "Categorize your expenses to analyze spending patterns and identify areas for potential savings."},
   {
-    title: "step 6: Monitor Stock Prices and Investments",
+    title: "Step 6: Monitor Stock Prices and Investments",
     description: 
   " Visit the “ETF” section to view real-time stock prices and check your investment portfolio. " },
 ];

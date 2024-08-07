@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import UserDetailsBox from './UserDetailsBox';
+import api from '../../utils/api'
 
 const Message = ({ sender, text, avatar, isOwnMessage }) => {
   const [showUserDetails, setShowUserDetails] = useState(false);
@@ -9,7 +10,7 @@ const Message = ({ sender, text, avatar, isOwnMessage }) => {
 
   const fetchUserDetails = async (username) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/get-user/get-user/${username}`, {
+      const response = await api.get(`/api/get-user/get-user/${username}`, {
         headers: { 'x-auth-token': localStorage.getItem('token') }
       });
       setUserDetails(response.data);

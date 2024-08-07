@@ -8,7 +8,7 @@ const Workflow = () => {
       <h2 className="text-3xl sm:text-5xl lg:text-6xl text-center mt-6 tracking-wide">
         Accelerate your{" "}
         <span className="bg-gradient-to-r from-F to-A text-transparent bg-clip-text">
-          Investment workflow.
+          Financial workflow.
         </span>
       </h2>
       <div className="flex flex-wrap justify-center">

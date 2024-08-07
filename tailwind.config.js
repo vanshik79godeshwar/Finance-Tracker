@@ -14,6 +14,7 @@ export default {
         Lobster: ['Lobster', 'cursive'],
       },
       colors: {
+
         primary: '#457814', // Example custom green color
         secondary: '#D8345F', // Example custom red color
         accent: '#1FB6FF', // Example custom blue color

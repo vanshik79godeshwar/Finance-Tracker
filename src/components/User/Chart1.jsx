@@ -6,6 +6,11 @@ import { dateFormat } from '../../utils/dateFormat';
 
 ChartJs.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ArcElement);
 
+function parseDate(dateStr) {
+    const [day, month, year] = dateStr.split('/').map(Number);
+    return new Date(year, month - 1, day);
+}
+
 function Chart() {
     const { incomes, expenses } = useGlobalContext();
 
@@ -24,6 +29,9 @@ function Chart() {
 
     // Filter out dates with zero income and expense
     const filteredData = Object.entries(combinedData).filter(([_, values]) => values.income !== 0 || values.expense !== 0);
+
+    // Sort the filteredData by date in ascending order
+    filteredData.sort(([dateA], [dateB]) => parseDate(dateA) - parseDate(dateB));
 
     const data = {
         labels: filteredData.map(([date]) => date),
@@ -117,7 +125,7 @@ function Chart() {
     };
 
     return (
-        <div className=" shadow-2xl p-4 mb-5 rounded-lg">
+        <div className="shadow-2xl p-4 mb-5 rounded-lg">
             <Line data={data} options={options} />
         </div>
     );

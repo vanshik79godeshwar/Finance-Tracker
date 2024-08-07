@@ -3,6 +3,7 @@ import Sidebar from '../components/User/Sidebar'
 import DashboardCMP from '../components/User/Dashboard1CMP'
 import '../components/User/sidebar.css';
 
+
 export default function Dashboard({ user }) {
 
   return (
@@ -16,3 +17,4 @@ export default function Dashboard({ user }) {
     </div>
   )
 }
+ 
