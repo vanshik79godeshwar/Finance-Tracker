@@ -219,7 +219,7 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors({
-  origin: 'http://localhost:5173', // Replace with your frontend's URL
+  origin: 'https://finance-tracker-dun.vercel.app', // Replace with your frontend's URL
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'x-auth-token', 'Authorization'],
 }));
