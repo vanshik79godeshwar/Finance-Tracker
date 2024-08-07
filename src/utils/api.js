@@ -5,7 +5,7 @@ import axios from 'axios';
 //http://localhost:5000
 
 const api = axios.create({
-    baseURL: 'https://finance-tracker-backend-dhar.onrender.com', // Apna backend server URL
+    baseURL: 'http://localhost:5000', // Apna backend server URL
 });
 
 // Add a request interceptor
@@ -15,7 +15,7 @@ api.interceptors.request.use(
         if (token) {
             config.headers['x-auth-token'] = token;
         }
-        return config;
+        return config; 
     },
     (error) => {
         return Promise.reject(error);
