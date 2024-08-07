@@ -52,7 +52,7 @@ const Currency = () => {
 
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-Black">
-            <div className="w-full max-w-md p-8 bg-Navy bg-opacity-50 backdrop-blur-md rounded-lg shadow-md">
+            <div className="w-full shadow-blue-400 max-w-md p-8 bg-Navy bg-opacity-50 backdrop-blur-md rounded-lg shadow-md">
                 <h1 className="text-3xl font-bold mb-4 text-White">Currency Exchanger</h1>
                 <div className="mb-4">
                     <label htmlFor="amount" className="block mb-2 font-bold text-White">Amount:</label>

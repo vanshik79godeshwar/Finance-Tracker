@@ -72,56 +72,59 @@ const EMICalculator = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#27292b] text-white">
-      <div className="bg-[#1e1e1e] p-8 rounded-lg shadow-lg w-full max-w-4xl flex">
-        <div className="flex-1 p-4">
-          <h1 className="text-3xl font-bold mb-6">EMI Calculator</h1>
-          <div className="flex flex-col space-y-4">
-            <div className="flex flex-col items-start">
-              <label htmlFor="loan-amount" className="mb-1">Loan Amount:</label>
-              <input
-                type="number"
-                id="loan-amount"
-                className="p-2 rounded-md bg-[#2a2a2a] text-white border border-gray-700"
-                placeholder="Enter loan amount"
-                value={loanAmount}
-                onChange={(e) => setLoanAmount(parseFloat(e.target.value))}
-              />
-            </div>
-            <div className="flex flex-col items-start">
-              <label htmlFor="interest-rate" className="mb-1">Interest Rate (%):</label>
-              <input
-                type="number"
-                id="interest-rate"
-                step="0.01"
-                className="p-2 rounded-md bg-[#2a2a2a] text-white border border-gray-700"
-                placeholder="Enter interest rate"
-                value={interestRate}
-                onChange={(e) => setInterestRate(parseFloat(e.target.value))}
-              />
-            </div>
-            <div className="flex flex-col items-start">
-              <label htmlFor="loan-tenure" className="mb-1">Loan Tenure (Years):</label>
-              <input
-                type="number"
-                id="loan-tenure"
-                className="p-2 rounded-md bg-[#2a2a2a] text-white border border-gray-700"
-                placeholder="Enter loan tenure"
-                value={loanTenure}
-                onChange={(e) => setLoanTenure(parseFloat(e.target.value))}
-              />
-            </div>
-            <div className="mt-4">
-              <h2 className="text-xl font-bold">Monthly EMI: <span>{emi}</span></h2>
-              <h2 className="text-xl font-bold mt-2">Total Interest: <span>{totalInterest}</span></h2>
-            </div>
+    <div className="flex flex-col   items-center justify-center min-h-screen bg-[#27292b] text-white">
+    <div className="bg-[#1e1e1e] shadow-black p-8 rounded-lg shadow-lg w-full max-w-4xl flex border border-gray-700">
+      <div className="flex-1 p-4">
+        <h1 className="text-3xl font-bold mb-6">EMI Calculator</h1>
+        <div className="flex flex-col space-y-4">
+          <div className="flex flex-col items-start">
+            <label htmlFor="loan-amount" className="mb-1 text-gray-400">Loan Amount:</label>
+            <input
+              type="number"
+              id="loan-amount"
+              className="p-2 rounded-md bg-[#2a2a2a] text-white border border-gray-700 focus:outline-none focus:border-blue-500"
+              placeholder="Enter loan amount"
+              value={loanAmount}
+              onChange={(e) => setLoanAmount(parseFloat(e.target.value))}
+            />
+          </div>
+          <div className="flex flex-col items-start">
+            <label htmlFor="interest-rate" className="mb-1 text-gray-400">Interest Rate (%):</label>
+            <input
+              type="number"
+              id="interest-rate"
+              step="0.01"
+              className="p-2 rounded-md bg-[#2a2a2a] text-white border border-gray-700 focus:outline-none focus:border-blue-500"
+              placeholder="Enter interest rate"
+              value={interestRate}
+              onChange={(e) => setInterestRate(parseFloat(e.target.value))}
+            />
+          </div>
+          <div className="flex flex-col items-start">
+            <label htmlFor="loan-tenure" className="mb-1 text-gray-400">Loan Tenure (Years):</label>
+            <input
+              type="number"
+              id="loan-tenure"
+              className="p-2 rounded-md bg-[#2a2a2a] text-white border border-gray-700 focus:outline-none focus:border-blue-500"
+              placeholder="Enter loan tenure"
+              value={loanTenure}
+              onChange={(e) => setLoanTenure(parseFloat(e.target.value))}
+            />
+          </div>
+          <div className="mt-4">
+            <h2 className="text-xl font-bold">Monthly EMI: <span className="text-blue-400">{emi}</span></h2>
+            <h2 className="text-xl font-bold mt-2">Total Interest: <span className="text-blue-400">{totalInterest}</span></h2>
           </div>
         </div>
-        <div className="flex-1 p-4 flex items-center justify-center">
+      </div>
+      <div className="flex-1 p-4 flex items-center justify-center">
+        <div className="w-full max-w-md">
           <canvas ref={emiChartRef} id="emiChart"></canvas>
         </div>
       </div>
     </div>
+  </div>
+  
   );
 };
 
