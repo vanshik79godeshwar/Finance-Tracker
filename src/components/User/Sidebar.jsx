@@ -16,6 +16,7 @@ const Sidebar = ({ user }) => {
         // { name: 'Analytics', path: '/analytics', icon: <FaChartPie /> },
         { name: 'Communities', path: '/Server', icon: <FaChartPie /> },
         // { name: 'Reports', path: '/reports', icon: <FaFileAlt /> },
+        { name: 'Live Metal Rates', path: '/Gold', icon: <FaFileAlt /> },
         { name: 'ETF', path: '/etf', icon: <FaFileAlt /> },
         // { name: 'Integrations', path: '/integrations', icon: <FaPuzzlePiece /> },
         { name: 'Expense', path: '/expense', icon: <FaPuzzlePiece /> },
