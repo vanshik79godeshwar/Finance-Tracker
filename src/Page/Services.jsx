@@ -1,17 +1,16 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
 import ServicesBox from '../components/User/ServicesBox.jsx';
 import AppointmentForm from '../components/User/AppointmentForm.jsx';
 import '../components/User/AF.css'
-import Navbar from  '../components/Navbar';
- 
- 
+import Navbar from '../components/Navbar';
+
+
 function ServicesPage() {
-    return (
-        <>
-<div className="app">
-       
-       <Navbar />
-     </div>
+  return (
+    <>
+      <div className="app">
+        <Navbar />
+      </div>
       <div className="services-page">
         <div className="services-box">
           <ServicesBox />
@@ -20,10 +19,9 @@ function ServicesPage() {
           <AppointmentForm />
         </div>
       </div>
-      </>
-    );
-  }
-  
-  export default ServicesPage;
+    </>
+  );
+}
 
- 
+export default ServicesPage;
+

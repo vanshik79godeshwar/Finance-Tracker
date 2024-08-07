@@ -113,7 +113,7 @@ const App = () => {
         <div className="map-container">
           <iframe
             title="Company Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509737!2d144.95373531531268!3d-37.81627977975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5773de04789c1e8!2s123%20Finance%20St%2C%20Money%20City%20VIC%203000%2C%20Australia!5e0!3m2!1sen!2sus!4v1609332859677!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60259.18249144014!2d72.8147314!3d21.1892792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f5b19c2a5d1b5%3A0xcca49e1a3762c163!2sSurat%2C%20Gujarat%2C%20India!5e0!3m2!1sen!2sus!4v1691431848300!5m2!1sen!2sus"
             width="600"
             height="450"
             frameBorder="0"

@@ -8,7 +8,7 @@ export default function Gold({ user }) {
     <div className="flex">
       <Sidebar user={user} />
       <div className="flex-1 bg-white">
-        <GoldCMP />
+        <GoldCMP user={user}/>
       </div>
     </div>
   )

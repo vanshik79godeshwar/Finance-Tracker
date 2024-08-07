@@ -8,19 +8,26 @@ import BrandLogo from '../../assets/Brand_LOGO.png';
 import PrivateRoute from '../../PrivateRoute'; // Import PrivateRoute
 
 const Sidebar = ({ user }) => {
-  const sections = [
-    { name: 'Profile', path: '/profile', icon: <FaUser /> },
-    { name: 'Help', path: '/help', icon: <FaQuestionCircle /> },
-    { name: 'Dashboard', path: '/dashboard', icon: <FaTachometerAlt /> },
-    { name: 'Budget', path: '/budget', icon: <FaChartLine /> },
-    { name: 'Communities', path: '/Server', icon: <FaComments /> },
-    { name: 'ETF', path: '/etf', icon: <FaFileAlt /> },
-    { name: 'Expense', path: '/expense', icon: <FaMoneyBillWave /> },
-    { name: 'Income', path: '/income', icon: <FaPiggyBank /> },
-    { name: 'Currency', path: '/currency', icon: <FaDollarSign /> },
-    { name: 'EMI Calculator', path: '/emi', icon: <FaCalculator /> },
-    { name: 'Billing', path: '/billing', icon: <FaCreditCard /> },
-  ];
+    const sections = [
+        { name: 'Profile', path: '/profile', icon: <FaUser /> },
+        { name: 'Help', path: '/help', icon: <FaQuestionCircle /> },
+        // { name: 'Settings', path: '/settings', icon: <FaCog /> },
+        { name: 'Dashboard', path: '/dashboard', icon: <FaTachometerAlt /> },
+        // { name: 'Notifications', path: '/notifications', icon: <FaBell /> },
+        // { name: 'Messages', path: '/messages', icon: <FaEnvelope /> },
+        { name: 'Budget', path: '/budget', icon: <FaChartLine /> },
+        // { name: 'Analytics', path: '/analytics', icon: <FaChartPie /> },
+        { name: 'Communities', path: '/Server', icon: <FaChartPie /> },
+        // { name: 'Reports', path: '/reports', icon: <FaFileAlt /> },
+        { name: 'Live Metal Rates', path: '/Gold', icon: <FaFileAlt /> },
+        { name: 'ETF', path: '/etf', icon: <FaFileAlt /> },
+        // { name: 'Integrations', path: '/integrations', icon: <FaPuzzlePiece /> },
+        { name: 'Expense', path: '/expense', icon: <FaPuzzlePiece /> },
+        { name: 'Income', path: '/income', icon: <FaCode /> },
+        { name: 'Currency', path: '/currency', icon: <FaCode /> },
+        { name: 'EMI Calculator', path: '/emi', icon: <FaCode /> },
+        { name: 'Billing', path: '/billing', icon: <FaCreditCard /> },
+    ];
 
   return (
     <div className="flex flex-col w-64 h-screen px-4 py-8 bg-Black border-r md:relative md:h-auto md:overflow-y-auto md:mt-0 md:border-none">
