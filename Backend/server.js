@@ -233,6 +233,8 @@ app.use('/api/get-user', require('./Routes/getUser'));
 app.use('/api/etf', require('./Routes/etf'));
 app.use('/api/user1', require('./Routes/userProfile'));
 app.use('/api/career', require('./Routes/careerRoutes')); // Updated path to career routes
+app.use('/api/appointments', require('./Routes/appointment')); // Include appointment routes
+app.use('/api/contact' , require('./Routes/contact'));
 
 // Route to fetch initial messages for a group
 app.get('/api/chat/:group', async (req, res) => {

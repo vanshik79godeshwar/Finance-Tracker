@@ -8,9 +8,9 @@ import User from './Page/User.jsx';
 import PrivateRoute from './PrivateRoute.jsx';
 import Test from './Page/Test.jsx';
 import Career from './Page/Career.jsx';
+import Services from './Page/Services.jsx';
 import ContactUs from './Page/ContactUs.jsx';
 import AboutUs from './Page/AboutUs.jsx';
-import Services from './Page/Services.jsx';
 
 function App() {
   const [tourSteps, setTourSteps] = useState([
@@ -33,7 +33,7 @@ function App() {
     {
       target: '.testimonials-section',
       content: 'See what our customers have to say about us.',
-    },      
+    },
   ]);
 
   return (
@@ -52,11 +52,9 @@ function App() {
             spotlightShadow: '0 0 0 4px #ffffff', // Creates a white border around the highlighted area
           },
           spotlight: {
-            backgroundColor: '#b3c3d817', 
-             
+            backgroundColor: '#b3c3d817',
           },
         }}
-        
       />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -65,12 +63,9 @@ function App() {
         <Route path="/Blogs" element={<Test />} />
         <Route path="/Career" element={<Career />} />
         <Route path="/ContactUs" element={<ContactUs />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
-        <Route path="/Services" element={<Services />} />
-        <Route
-          path="/:username/*"
-          element={<PrivateRoute element={<User />} />}
-        />
+        <Route path="/Service" element={<Services />} />
+        <Route path="/About" element={<AboutUs />} />
+        <Route path="/:username/*" element={<PrivateRoute element={<User />} />} />
       </Routes>
     </Router>
   );

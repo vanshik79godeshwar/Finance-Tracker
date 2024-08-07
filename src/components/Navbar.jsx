@@ -47,15 +47,10 @@ const Navbar = () => {
               ))}
             </ul>
             <div className="flex space-x-6">
-              <NavLink to="#" className="py-2 px-3 border rounded-md">
+              <NavLink to="/Login" className="py-2 px-3 border rounded-md">
                 Sign In
               </NavLink>
-              <NavLink
-                to="#"
-                className="py-2 px-3 rounded-md bg-gradient-to-r from-F to-A"
-              >
-                Create account
-              </NavLink>
+              
             </div>
           </div>
         )}

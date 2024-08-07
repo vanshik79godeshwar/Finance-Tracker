@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const nodemailer = require('nodemailer');
+const ejs = require('ejs');
+const path = require('path');
 const User = require('../Models/User');
 require('dotenv').config();
 
@@ -78,21 +80,29 @@ router.post('/register', async (req, res) => {
           return res.status(500).json({ message: 'Server error' });
         }
 
-        const mailOptions = {
-          from: "CapitalCompass",
-          to: su_email,
-          subject: 'Welcome to Our Website!',
-          html: `<p>Hello ${name},</p><p>THWHBKIBAWUDOBUOD </p>`,
-        };
-
-        transporter.sendMail(mailOptions, (error, info) => {
-          if (error) {
-            console.error('Error sending email:', error);
-            return res.status(500).send('Error sending confirmation email');
-          } else {
-            console.log('Email sent:', info.response);
-            return res.status(200).json({ token }); // Return token on successful registration
+        const templatePath = path.join(__dirname, '..', 'templates', 'welcomeEmail.ejs');
+        ejs.renderFile(templatePath, { name }, (err, html) => {
+          if (err) {
+            console.error('Error rendering email template:', err);
+            return res.status(500).json({ message: 'Server error' });
           }
+
+          const mailOptions = {
+            from: "CapitalCompass",
+            to: su_email,
+            subject: 'Welcome to Our Website!',
+            html: html,
+          };
+
+          transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+              console.error('Error sending email:', error);
+              return res.status(500).send('Error sending confirmation email');
+            } else {
+              console.log('Email sent:', info.response);
+              return res.status(200).json({ token }); // Return token on successful registration
+            }
+          });
         });
       }
     );

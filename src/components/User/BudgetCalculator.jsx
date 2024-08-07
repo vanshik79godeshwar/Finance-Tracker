@@ -109,7 +109,6 @@ const BudgetCalculator = () => {
                 variant="contained"
                 color="primary"
                 fullWidth
-                className="budget-button"
                 onClick={() => console.log('Calculate EMI button clicked!')}
                 className="bg-blue-500 hover:bg-blue-700"
               >

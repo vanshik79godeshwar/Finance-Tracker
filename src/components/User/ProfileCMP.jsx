@@ -4,6 +4,7 @@ import EditProfileModal from './EditProfile';
 import { faUser, faEnvelope, faPhone, faBuilding, faCalendar, faGenderless, faComment } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import api from '../../utils/api';
 
 const Profile = () => {
   const [user, setUser] = useState(null);
@@ -13,7 +14,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('https://finance-tracker-backend-dhar.onrender.com/api/user1/profile1', {
+        const response = await api.get('/api/user1/profile1', {
           headers: { 'x-auth-token': localStorage.getItem('token') }
         });
         setUser(response.data);

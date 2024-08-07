@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to CapitalCompass</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .header {
+      text-align: center;
+      padding: 20px;
+      background-color: #a81212;
+      color: #fff;
+    }
+    .header h1 {
+      margin: 0;
+    }
+    .content {
+      padding: 20px;
+    }
+    .content p {
+      margin: 0 0 15px;
+      line-height: 1.6;
+    }
+    .content a {
+      color: #a81212;
+      text-decoration: none;
+    }
+    .content a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f4f4f4;
+      font-size: 12px;
+      color: #999;
+    }
+    .social-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .social-links a {
+      margin: 0 10px;
+      color: #a81212;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Welcome to CapitalCompass!</h1>
+    </div>
+    <div class="content">
+      <p>Hello <%= name %>,</p>
+      <p>Thank you for signing up on our website. We are excited to have you on board!</p>
+      <p>Explore our website and discover the amazing services we offer.</p>
+      <p>Feel free to <a href="mailto:support@capitalcompass.com">contact us</a> if you have any questions or need assistance.</p>
+      <p>Best Regards,</p>
+      <p>CapitalCompass Team</p>
+      <div class="social-links">
+        <p>Follow us on:</p>
+        <a href="https://www.instagram.com/capitalcompass4u/">Instagram</a> | 
+        <a href="https://x.com/capitalcompass4">Twitter</a>
+      </div>
+    </div>
+    <div class="footer">
+      <p>&copy; 2024 CapitalCompass. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+</html>
