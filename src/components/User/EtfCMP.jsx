@@ -13,7 +13,7 @@ const FinanceDashboard = ({ user }) => {
   // https://localhost:5000/api/etf/
   // https://finance-tracker-backend-dhar.onrender.com/api/etf/
 
-  const BASE_URL = "http://localhost:5000/api/etf/";
+  const BASE_URL = "https://finance-tracker-backend-dhar.onrender.com/api/etf/";
 
   useEffect(() => {
     const fetchData = async () => {

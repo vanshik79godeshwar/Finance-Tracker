@@ -5,7 +5,7 @@ import axios from 'axios';
 //http://localhost:5000
 
 const api = axios.create({
-    baseURL: 'http://localhost:5000', // Apna backend server URL
+    baseURL: 'https://finance-tracker-backend-dhar.onrender.com', // Apna backend server URL
 });
 
 // Add a request interceptor
