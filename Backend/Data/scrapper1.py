@@ -1,7 +1,15 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import datetime
+
+# Define the directory path
+directory = './Backend/Data'
+
+# Create the directory if it doesn't exist
+if not os.path.exists(directory):
+    os.makedirs(directory)
 
 def fetch_historical_data(name):
     headers = {
@@ -33,7 +41,7 @@ def fetch_historical_data(name):
         return pd.DataFrame()
 
     # Extract data from the table
-    rows = table.find_all('tr')[:]  # Skip the header row
+    rows = table.find_all('tr')[1:]  # Skip the header row
     data = []
     for row in rows:
         cols = row.find_all('td')
@@ -42,7 +50,7 @@ def fetch_historical_data(name):
         date = cols[0].text.strip()
         try:
             # Correct date format
-            date = datetime.datetime.strptime(date, '%b %d, %Y')  # Update date format here
+            date = datetime.datetime.strptime(date, '%b %d, %Y')
             price = float(cols[1].text.replace(',', '').replace('₹', '').strip())
             open_ = float(cols[2].text.replace(',', '').replace('₹', '').strip())
             high = float(cols[3].text.replace(',', '').replace('₹', '').strip())
@@ -68,12 +76,12 @@ nifty_data = fetch_historical_data('s-p-cnx-nifty')
 
 # Save to CSV files
 if not sensex_data.empty:
-    sensex_data.to_csv('./Backend/Data/sensex.csv', index=False)
+    sensex_data.to_csv(f'{directory}/sensex.csv', index=False)
 else:
     print("Sensex data is empty")
 
 if not nifty_data.empty:
-    nifty_data.to_csv('./Backend/Data/nifty-50.csv', index=False)
+    nifty_data.to_csv(f'{directory}/nifty-50.csv', index=False)
 else:
     print("Nifty data is empty")
 
