@@ -205,7 +205,7 @@ const server = http.createServer(app);
 
 const io = socketIo(server, {
   cors: {
-    origin: https://capitalcompassforyou.vercel.app', // Replace with your frontend's URL
+    origin: 'https://capitalcompassforyou.vercel.app', // Replace with your frontend's URL
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
   },
