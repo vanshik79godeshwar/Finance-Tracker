@@ -200,11 +200,12 @@ const server = http.createServer(app);
 // Initialize Socket.io with the server and enable CORS
 
 // https://finance-tracker-dun.vercel.app
+// https://capitalcompassforyou.vercel.app
 // http://localhost:5173
 
 const io = socketIo(server, {
   cors: {
-    origin: 'https://finance-tracker-dun.vercel.app', // Replace with your frontend's URL
+    origin: https://capitalcompassforyou.vercel.app', // Replace with your frontend's URL
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
   },
@@ -223,7 +224,7 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors({
-  origin: 'https://finance-tracker-dun.vercel.app', // Replace with your frontend's URL
+  origin: 'https://capitalcompassforyou.vercel.app', // Replace with your frontend's URL
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'x-auth-token', 'Authorization'],
 }));
