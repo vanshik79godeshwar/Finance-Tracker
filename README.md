@@ -420,3 +420,18 @@ We welcome contributions to the Finance Tracker project! Here's how you can get 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+
+
+![Screenshot 2024-12-28 221719](https://github.com/user-attachments/assets/ac6a50e2-a4f5-4d1b-b822-052448d7f33a)
+
+![Screenshot 2024-12-28 221549](https://github.com/user-attachments/assets/7addbe8c-79f1-485c-92b1-4c5274d48c07)
+![Screenshot 2024-12-28 221125](https://github.com/user-attachments/assets/f69ec031-a3f0-4537-bc80-24e1190979d2)
+
+![Screenshot 2024-12-28 220039](https://github.com/user-attachments/assets/6921de9a-f5e8-4f30-8d67-3026f06df3bc)
+
+![Screenshot 2024-12-28 220945](https://github.com/user-attachments/assets/018bf613-5dac-44ef-9c15-d36ea7c72242)
+![Screenshot 2024-12-28 220922](https://github.com/user-attachments/assets/6fd2f502-3b40-4756-bfb7-f5d1dbf0e34b)
+![Screenshot 2024-12-28 220339](https://github.com/user-attachments/assets/1197a2a5-4014-460d-ba1b-012e13da487d)
+
+
+
