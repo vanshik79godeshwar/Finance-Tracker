@@ -5,6 +5,15 @@
 
 The Capital Compass Finance Tracker is a comprehensive website tool designed to simplify financial resource management for users, by helping them visually and interactively manage their dally income and expense, monitor their investments, perform budget calculation, EMI calculation, live rate currency exchange, real time precious metal rates tracking and a feature to communicate with other users on investment decisions through a live-group-chat communication model to obtain better financial decisions and network with other investors. 
 
+![Screenshot 2024-12-28 221719](https://github.com/user-attachments/assets/b2a57eef-2b35-4c9a-819f-2ad9a622549c)
+![Screenshot 2024-12-28 221549](https://github.com/user-attachments/assets/bb420338-196b-4cc1-9384-e0790f29aaca)
+![Screenshot 2024-12-28 221125](https://github.com/user-attachments/assets/7daf8893-f1fd-4218-b80d-f2182cfc20b5)
+![image](https://github.com/user-attachments/assets/02756324-7877-4e5c-917e-cbda06761338)
+![image](https://github.com/user-attachments/assets/4953b371-b039-4fa4-b1cb-f7503f0d1906)
+![image](https://github.com/user-attachments/assets/55be4cf9-4d3b-456d-9261-98ee4dd380c1)
+
+
+
 ## Tech Stack Used
 
 - **Frontend**: React.js, Vite framework
@@ -420,18 +429,3 @@ We welcome contributions to the Finance Tracker project! Here's how you can get 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
-
-![Screenshot 2024-12-28 221719](https://github.com/user-attachments/assets/ac6a50e2-a4f5-4d1b-b822-052448d7f33a)
-
-![Screenshot 2024-12-28 221549](https://github.com/user-attachments/assets/7addbe8c-79f1-485c-92b1-4c5274d48c07)
-![Screenshot 2024-12-28 221125](https://github.com/user-attachments/assets/f69ec031-a3f0-4537-bc80-24e1190979d2)
-
-![Screenshot 2024-12-28 220039](https://github.com/user-attachments/assets/6921de9a-f5e8-4f30-8d67-3026f06df3bc)
-
-![Screenshot 2024-12-28 220945](https://github.com/user-attachments/assets/018bf613-5dac-44ef-9c15-d36ea7c72242)
-![Screenshot 2024-12-28 220922](https://github.com/user-attachments/assets/6fd2f502-3b40-4756-bfb7-f5d1dbf0e34b)
-![Screenshot 2024-12-28 220339](https://github.com/user-attachments/assets/1197a2a5-4014-460d-ba1b-012e13da487d)
-
-
-
