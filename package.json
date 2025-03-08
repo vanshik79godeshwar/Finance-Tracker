@@ -29,7 +29,7 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "fortawesome": "^0.0.1-security",
-    "framer-motion": "^11.3.21",
+    "framer-motion": "^11.18.2",
     "intro.js": "^8.0.0-beta.1",
     "lucide-react": "^0.402.0",
     "moment": "^2.30.1",
