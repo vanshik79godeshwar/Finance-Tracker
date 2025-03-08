@@ -8,8 +8,9 @@ import Navbar from '../components/Navbar';
 function ServicesPage() {
   return (
     <>
-      <div className="app">
-        <Navbar />
+    <Navbar />
+      <div className="app mt-20">
+        
       </div>
       <div className="services-page">
         <div className="services-box">
