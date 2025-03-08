@@ -32,8 +32,10 @@ const App = () => {
   };
 
   return (
-    <div className="contact-us-page">
-      <Navbar />
+    <>
+    <Navbar className="mb-20"/>
+    <div className="contact-us-page mt-20">
+      
       {showAlert && <div className="alert-box">{alertMessage}</div>}
       <div className="contact-wrapper mt-7">
         <div className="contact-container">
@@ -132,6 +134,7 @@ const App = () => {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

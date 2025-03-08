@@ -37,7 +37,7 @@ export default function News() {
   return (
     <>
       <Navbar />
-      <div className="News-section">
+      <div className="News-section mt-20">
         <div className="input-field my-8 flex justify-center align-middle">
           <input
             type="text"

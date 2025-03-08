@@ -337,7 +337,7 @@ const CareerOpenings = () => {
     return (
         <>
             <Navbar />
-            <div className="bg-black text-white min-h-screen p-6">
+            <div className="bg-black text-white min-h-screen p-6 mt-20">
                 <header className="bg-gradient-to-r from-black to-gray-900 text-white p-6 rounded-lg shadow-lg mb-6">
                     <h1 className="text-3xl font-bold flex justify-center mb-4">Career Openings at CapitalCompass</h1>
                     <p className="mt-3 mx-auto max-w-2xl">
